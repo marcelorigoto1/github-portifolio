@@ -14,24 +14,32 @@
 		<style>
 			/* Enable page scrolling */
 			body {
-				overflow-y: scroll; /* This ensures the page will scroll if content overflows */
+				overflow-y: scroll;
 				max-height: 100vh;
-				overflow-x: hidden; /* Prevent horizontal scroll */
+				overflow-x: hidden;
 			}
 
-			/* Optional: Force scrolling on the map if the content inside it is large */
-			#map {
+			/* Set a maximum width for the iframe and ensure it doesn't overflow */
+			#map iframe {
 				width: 100%;
-				height: 400px;
-				overflow: auto; /* Add scroll for overflowing content inside the map section */
+				height: 400px; /* Adjust height based on your needs */
+				border: none;  /* Remove iframe border */
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Add a shadow effect for better styling */
+				overflow: hidden;  /* Ensure content inside doesn't overflow */
 			}
 
-			/* Optional: Add a fixed height to the main content to enforce scrolling */
+			/* Main content should be scrollable */
 			#main {
 				height: calc(100vh - 100px); /* Adjust based on your header/footer height */
 				overflow-y: auto; /* Allow the main content to scroll */
 			}
 
+			/* Responsive for smaller devices */
+			@media (max-width: 768px) {
+				#map iframe {
+					height: 300px;  /* Reduce the height for smaller screens */
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -41,37 +49,34 @@
 			<div id="main">
 
 				<!-- Header -->
-					<header id="header">
-						<h1>Marcelo Alves Rigoto</h1>
-						<p>Geographer &nbsp;&bull;&nbsp; GIS Technician &nbsp;&bull;&nbsp; Masters in Copernicus Digital Earth</p>
+				<header id="header">
+					<h1>Marcelo Alves Rigoto</h1>
+					<p>Geographer &nbsp;&bull;&nbsp; GIS Technician &nbsp;&bull;&nbsp; Masters in Copernicus Digital Earth</p>
 
-						<!-- Embedded Map -->
-						<div id="map" style="width:100%; height:800px; margin-top:20px; margin-bottom:20px;">
-							<iframe 
-								width="100%" 
-								height="100%" 
-								frameborder="0" 
-								src="https://zgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=207893240e774d249643fadd1b2c56c4" 
-								allowfullscreen>
-							</iframe>
-						</div>
+					<!-- Embedded Map -->
+					<div id="map" style="margin-top: 20px; margin-bottom: 20px;">
+						<iframe 
+							src="https://zgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=207893240e774d249643fadd1b2c56c4" 
+							allowfullscreen>
+						</iframe>
+					</div>
 
-						<!-- Social Links -->
-						<nav>
-							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+					<!-- Social Links -->
+					<nav>
+						<ul>
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+				</header>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Marcelo Rigoto. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
+				<footer id="footer">
+					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+				</footer>
 
 			</div>
 		</div>
