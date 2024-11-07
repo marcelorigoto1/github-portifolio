@@ -163,16 +163,16 @@
 	/* Container da grade 3x3 */
 	.grid-container {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, 1fr); /* Define 3 colunas */
 		grid-gap: 10px;
 		width: 100%;
 		max-width: 600px;
 		margin: 0 auto;
-		padding: 20px;
-		background-color: #000; /* Fundo para imitar as bordas */
+		padding: 10px;
+		background-color: #000; /* Fundo para simular as bordas entre os itens */
 		border-radius: 20px; /* Bordas arredondadas externas */
 	}
-	
+
 	/* Estilos dos blocos com hiperlinks */
 	.grid-item {
 		display: block;
@@ -180,17 +180,18 @@
 		border-radius: 10px; /* Bordas arredondadas para cada célula */
 		background-color: #fff;
 	}
-	
+
 	.grid-item img {
-		width: 100%;
+		width: 100%; /* Imagem ocupa todo o espaço da célula */
 		height: auto;
 		display: block;
 		transition: transform 0.3s; /* Efeito de zoom */
 	}
-	
+
 	.grid-item:hover img {
 		transform: scale(1.05); /* Zoom na imagem ao passar o mouse */
 	}
+
 
 
 /* Icon */
