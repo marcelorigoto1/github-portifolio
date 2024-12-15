@@ -1,0 +1,114 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #FAFAFA; /* Bright text */
+    background-color: #2E2E2E; /* Slightly lighter dark background */
+    height: 100vh; /* Ensure body height matches viewport height */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1; /* Fill remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Interactive Background */
+.interactive-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at top, #616161, transparent),
+                radial-gradient(ellipse at bottom, #1C1C1C, transparent);
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #424242; /* Dark gray */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(1.2); /* Brighten icons */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navbar Links Styling */
+.navbar-links a {
+    color: #e2e2e2; /* Brighter accent color */
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+}
+
+.navbar-links a:hover {
+    color: #066b70; /* Hover effect */
+    text-decoration: underline;
+}
+
+
+/* Footer Layout */
+.footer {
+    background-color: #FAFAFA;
+    padding: 20px 0;
+    text-align: center;
+    color: #000000;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.footer-logos img {
+    height: 100px;
+    max-width: 120px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: transform 0.3s ease;
+}
+
+.footer-logos img:hover {
+    transform: scale(1.1);
+}
+
+
+

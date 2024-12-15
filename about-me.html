@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Marcelo Alves Rigoto</title>
+    <link rel="stylesheet" href="assets/css/about-me.css">
+    <style>
+        /* Inline styles for clarity. You can move these to your main.css */
+
+        /* Layout Container */
+        .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Styling */
+        .timeline-column {
+            background-color: #424242;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            color: #E0E0E0;
+        }
+
+        .timeline-column h2 {
+            text-align: center;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .timeline-item {
+            background-color: #066b70;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-item h3 {
+            color: #fafafa;
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .timeline-item p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #E0E0E0;
+        }
+
+        /* Footer Adjustments */
+        .footer {
+            background-color: #FAFAFA;
+            color: #FAFAFA;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .footer-logos img {
+            height: 50px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank">
+                <img src="assets/css/images/linkedin-icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/marcelorigoto1" target="_blank">
+                <img src="assets/css/images/github.png" alt="GitHub">
+            </a>
+        </div>
+        <div class="navbar-title">E-Portfolio - Marcelo Alves Rigoto</div>
+        <div class="navbar-links">
+            <a href="index.html"> Home</a>
+            <a href="all-projects.html">Projects</a>
+            <a href="about-me.html">About Me</a>
+        </div>
+    </nav>
+
+    <!-- Timeline Section -->
+    <section class="timeline-container">
+        <!-- Academic Background -->
+        <div class="timeline-column">
+            <h2>Academic Background</h2>
+            <div class="timeline-item">
+                <h3>Copernicus Master in Digital Earth</h3>
+                <p><strong>Paris Lodron University Salzburg (PLUS)</strong> & <strong>Palacký University Olomouc (UPOL)</strong></p>
+                <p>Specialized in GIS, remote sensing, and spatial data analysis.</p>
+                <p><em>2022 - Present</em></p>
+            </div>
+            <div class="timeline-item">
+                <h3>Bachelor's Degree in Geography</h3>
+                <p><strong>Universidade Federal Fluminense</strong></p>
+                <p>Focused on physical and human geography, remote sensing, spatial analysis and cartographic tools.</p>
+                <p><em>2016 - 2021</em></p>
+            </div>
+        </div>
+
+        <!-- Professional Background -->
+        <div class="timeline-column">
+            <h2>Professional Background</h2>
+            <div class="timeline-item">
+                <h3>GIS Technician</h3>
+                <p><strong>Imagem Geosistemas</strong></p>
+                <p>Developed tools ans scripts to automate workflows with Python. Geoprocessing Tools, Dashboards, Webmaps and Experience Builders in ArcGIS Online.</p>
+                <p><em>2021 - 2023</em></p>
+            </div>
+            <div class="timeline-item">
+                <h3>GIS Intern</h3>
+                <p><strong>IBGE</strong></p>
+                <p>Worked on geospatial projects for data collection and analysis.</p>
+                <p><em>2017 - 2019</em></p>
+            </div>
+            <div class="timeline-item">
+                <h3>Remote Sensing Class Monitor</h3>
+                <p><strong>Universidade Federal Fluminense</strong></p>
+                <p>Assistant Professor during lessons. Used ArcGIS Tools and Ortophotogrametry.</p>
+                <p><em>2019 - 2021</em></p>
+            </div>
+            <div class="timeline-item">
+                <h3>GIS Intern</h3>
+                <p><strong>Instituto Municipal Pereira Passos</strong></p>
+                <p>Spatial data management, urban planning projects and remote sensing.</p>
+                <p><em>2019 - 2021</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logos">
+            <p>Contact: marcelorigoto1@gmail.com</p>
+            <img src="C:\Users\marce\Documents\GitHub\portifolio\assets\css\images\EN Co-funded by the EU_POS.jpg" alt="European Union">
+            <img src="C:\Users\marce\Documents\GitHub\portifolio\assets\css\images\PLUS Logo englisch Farbe.jpg" alt="Paris Lodron Univer of Salzburg">
+            <img src="C:\Users\marce\Documents\GitHub\portifolio\assets\css\images\UP_logo_horizont_en.png" alt="Palacký University Olomouc">
+        </div>
+    </footer>
+
+</body>
+</html>

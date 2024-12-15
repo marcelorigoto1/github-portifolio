@@ -1,120 +1,68 @@
-<!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Marcelo Rigoto - ePortifolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			/* Enable page scrolling */
-			body {
-				overflow-y: scroll;
-				max-height: 100vh;
-				overflow-x: hidden;
-			}
+<!DOCTYPE html>
+<html lang="en">
 
-			/* Set a maximum width for the iframe and ensure it doesn't overflow */
-			#map iframe {
-				width: 100%;
-				height: 400px; /* Adjust height based on your needs */
-				border: none;  /* Remove iframe border */
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Add a shadow effect for better styling */
-				overflow: hidden;  /* Ensure content inside doesn't overflow */
-			}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - E-Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-			/* Main content should be scrollable */
-			#main {
-				height: calc(100vh - 100px); /* Adjust based on your header/footer height */
-				overflow-y: auto; /* Allow the main content to scroll */
-			}
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank">
+                <img src="assets/css/images/linkedin-icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/marcelorigoto1" target="_blank">
+                <img src="assets/css/images/github.png" alt="GitHub">
+            </a>
+        </div>
+        <div class="navbar-title">E-Portfolio - Marcelo Alves Rigoto</div>
+        <div class="navbar-links">
+            <a href="index.html"> Home</a>
+            <a href="all-projects.html">Projects</a>
+            <a href="about-me.html">About Me</a>
+        </div>
+    </nav>
 
-			/* Responsive for smaller devices */
-			@media (max-width: 768px) {
-				#map iframe {
-					height: 300px;  /* Reduce the height for smaller screens */
-				}
-			}
-		</style>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+    <!-- Main Section -->
+    <section id="about-me-intro">
+        <div class="about-me-container">
+            <div class="about-image">
+                <img src="assets/css/images/me.jpg" alt="Profile Picture">
+            </div>
+            <div class="about-summary">
+                <h1>Hello There!</h1>
+                <p>
+                    I am Marcelo Alves Rigoto, a Geographer from Universidade Federal Fluminense pursuing my MSc in the
+                    Copernicus Master in Digital Earth program. 
+                </p>
+                <p>
+                    Currently on my first semester on Copernicus Master on Digital Earth at Paris Lodron University of Salzburg, we are studing a more broad 
+                    aproach to the subjects and on the second year on Palacký University Olomouc where we will dig deeper into more specific subjects to GeoVisualization.
+                </p>
+                <p>
+                    My professional experiences include roles as GIS Technician at Imagem Geosistemas, where I developed
+                    tools, dashboards, and workflows using Python and JavaScript. At IBGE and Instituto Municipal Pereira
+                    Passos, I worked on spatial analysis and geospatial projects using tools like ArcGIS Pro and QGIS.
+                </p>
+                <a href="about-me.html" class="cta-button">MORE ABOUT ME</a>
+                <a href="all-projects.html" class="cta-button">PROJECTS</a>
+            </div>
+        </div>
+    </section>
 
-				<!-- Header -->
-				<header id="header">
-					<h1>Marcelo Alves Rigoto</h1>
-					<p>Geographer &nbsp;&bull;&nbsp; GIS Technician &nbsp;&bull;&nbsp; Masters in Copernicus Digital Earth</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logos">
+            <p>Contact: marcelorigoto1@gmail.com</p>
+            <img src="assets/css/images/EN Co-funded by the EU_POS.jpg" alt="European Union">
+            <img src="assets/css/images/PLUS Logo englisch Farbe.jpg" alt="Paris Lodron University Salzburg">
+            <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palacký University Olomouc">
+        </div>
+    </footer>
+</body>
 
-					<!-- Embedded Map -->
-					<div id="map" style="margin-top: 20px; margin-bottom: 20px;">
-						<iframe 
-							src="https://zgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=207893240e774d249643fadd1b2c56c4" 
-							allowfullscreen>
-						</iframe>
-					</div>
-
-					<h2> Projects </h2>
-
-					<div class="grid-container">
-						<a href="https://url1.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 1">
-						</a>
-						<a href="https://url2.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 2">
-						</a>
-						<a href="https://url3.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 3">
-						</a>
-						<a href="https://url4.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 4">
-						</a>
-						<a href="https://url5.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 5">
-						</a>
-						<a href="https://url6.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 6">
-						</a>
-						<a href="https://url7.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 7">
-						</a>
-						<a href="https://url8.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 8">
-						</a>
-						<a href="https://url9.com" class="grid-item">
-							<img src="assets\css\images\dwight-schrute-everybody-hurts.gif" alt="Imagem 9">
-						</a>
-					</div>
-
-					<!-- Social Links -->
-					<nav>
-						<ul>
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-					</nav>
-				</header>
-
-				<!-- Footer -->
-				<footer id="footer">
-				</footer>
-
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
 </html>

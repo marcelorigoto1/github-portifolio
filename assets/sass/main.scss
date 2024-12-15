@@ -160,37 +160,39 @@
 	}
 
 
-	/* Container da grade 3x3 */
-	.grid-container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr); /* Define 3 colunas */
-		grid-gap: 10px;
+	.row {
+		display: flex;
+		justify-content: space-between; /* Espaçamento entre os itens */
+		gap: 10px; /* Espaço entre os elementos */
 		width: 100%;
-		max-width: 600px;
-		margin: 0 auto;
+		max-width: 100%; /* Garante que a linha ocupe toda a largura disponível */
 		padding: 10px;
-		background-color: #000; /* Fundo para simular as bordas entre os itens */
-		border-radius: 20px; /* Bordas arredondadas externas */
+		background-color: #000; /* Fundo para simular bordas */
+		border-radius: 20px; /* Bordas arredondadas */
+		overflow-x: auto; /* Permite rolagem horizontal se necessário */
 	}
-
-	/* Estilos dos blocos com hiperlinks */
+	
 	.grid-item {
-		display: block;
+		flex: 1 1 30%; /* Mantém 3 itens lado a lado, cada um com 30% da largura da linha */
+		max-width: 15%; /* Garante que cada item tenha no máximo 30% da largura */
 		overflow: hidden;
-		border-radius: 10px; /* Bordas arredondadas para cada célula */
+		border-radius: 10px;
 		background-color: #fff;
 	}
-
+	
 	.grid-item img {
-		width: 100%; /* Imagem ocupa todo o espaço da célula */
-		height: auto;
-		display: block;
-		transition: transform 0.3s; /* Efeito de zoom */
+		width: 33%;
+		height: auto; /* Ajusta a altura automaticamente */
+		object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço do item */
+		transition: transform 0.3s;
 	}
-
+	
 	.grid-item:hover img {
-		transform: scale(1.05); /* Zoom na imagem ao passar o mouse */
+		transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 	}
+	
+	
+	
 
 
 
