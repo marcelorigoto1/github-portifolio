@@ -3,8 +3,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: #FAFAFA; /* Bright text */
-    background-color: #2E2E2E; /* Slightly lighter dark background */
+    color: #000000; /* Bright text */
+    background: linear-gradient(to bottom right, #f4f4f4, #515b64);
+    background-attachment: fixed;
     height: 100vh; /* Ensure body height matches viewport height */
 }
 
@@ -109,6 +110,5 @@ body {
 .footer-logos img:hover {
     transform: scale(1.1);
 }
-
 
 

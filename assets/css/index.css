@@ -4,7 +4,8 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #333333;
-    background-color: #FAFAFA;
+    background: linear-gradient(to bottom right, #f4f4f4, #515b64);
+    background-attachment: fixed;
 }
 
 /* About Me Section */
@@ -14,7 +15,8 @@ body {
     align-items: center;
     padding: 0; /* Remove padding */
     min-height: calc(100vh - 80px); /* Adjust height for full viewport */
-    background-color: #FAFAFA;
+    background: linear-gradient(to bottom right, #f4f4f4, #515b64);
+    background-attachment: fixed;
 }
 
 .about-me-container {
