@@ -1,0 +1,150 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #000000; 
+    background: linear-gradient(to bottom right, #f4f4f4, #515b64);
+    background-attachment: fixed;
+    height: 100vh; 
+}
+
+/* Main Content */
+.main-content {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Interactive Background */
+.interactive-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at top, #616161, transparent),
+                radial-gradient(ellipse at bottom, #1C1C1C, transparent);
+    z-index: -1;
+}
+
+.timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.timeline-column {
+    background-color: #424242;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    color: #E0E0E0;
+}
+
+.timeline-column h2 {
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.timeline-item {
+    background-color: #066b70;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-item h3 {
+    color: #fafafa;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.timeline-item p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #E0E0E0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #424242; 
+    color: #FFFFFF;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(1.2); 
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navbar Links Styling */
+.navbar-links a {
+    color: #e2e2e2; 
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+}
+
+.navbar-links a:hover {
+    color: #066b70; 
+    text-decoration: underline;
+}
+
+
+/* Footer Adjustments */
+.footer {
+    background-color: #FAFAFA;
+    color: #101010;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-logos img {
+    height: 50px;
+    object-fit: contain;
+}
+
+
