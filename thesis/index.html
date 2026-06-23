@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data-Driven Wildfire Spread Modeling — Rigoto 2025</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrapper">
+    <div class="header-text">
+      <h1>Data-Driven Wildfire Spread Modeling Using Earth Observation Data<br />with Interactive 3D Visualization in Unity</h1>
+      <p class="header-meta">Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+    </div>
+    <div class="header-badge">
+      <span class="badge-label">Master Thesis</span>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrapper">
+    <ul>
+      <li class="back-link"><a href="../index.html">&#8592; Portfolio</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrapper">
+    <h2>Real-Time 3D Wildfire Analysis Platform</h2>
+    <p>Integrating NASA FIRMS satellite fire detection data with a photorealistic digital twin of the Earth rendered in Unity and Cesium for Unity.</p>
+    <div class="hero-tags">
+      <span class="tag">Unity 2022 / 2023</span>
+      <span class="tag">Cesium for Unity</span>
+      <span class="tag">NASA FIRMS</span>
+      <span class="tag">VIIRS / MODIS</span>
+      <span class="tag">WGS84</span>
+      <span class="tag">Geospatial Visualization</span>
+    </div>
+  </div>
+</div>
+
+<main class="main-content">
+  <div class="wrapper">
+
+    <div class="section">
+      <h2>Abstract</h2>
+      <p>
+        This thesis presents the design and implementation of a real-time, interactive three-dimensional geospatial
+        visualization platform for wildfire monitoring and analysis. The system integrates satellite-derived fire
+        detection data from the NASA Fire Information for Resource Management System (FIRMS) API with a photorealistic
+        digital twin of the Earth&#8217;s surface rendered inside the Unity game engine, enhanced by Cesium for Unity,
+        which provides streaming global terrain, satellite imagery, and georeferenced coordinate systems at planetary scale.
+      </p>
+      <p>
+        The platform allows users to observe historical fire events over a user-defined date range, animate fire
+        spread through a day-by-day timeline, visualize burn scars on the terrain, overlay spatial wind and temperature
+        data, and navigate the three-dimensional scene with a free-fly camera. All data is sourced from open, publicly
+        available APIs and is processed through an automated pipeline that runs entirely within the Unity Editor
+        environment, requiring no external GIS software.
+      </p>
+      <p>
+        The core technical challenge addressed is bridging the gap between geospatial coordinate systems used in
+        Earth observation data (WGS84 latitude/longitude) and the local Cartesian coordinate system used by the
+        Unity renderer. Cesium for Unity provides the mathematical and runtime infrastructure to resolve this gap,
+        enabling objects placed at geographic coordinates to appear correctly on a photorealistic 3D globe in
+        real-time.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Thesis Details</h2>
+      <div class="two-col">
+        <div class="col">
+          <dl class="meta">
+            <dt>Author</dt>
+            <dd>Rigoto</dd>
+            <dt>Supervisor</dt>
+            <dd>Department of Geoinformatics, Palack&#253; University Olomouc</dd>
+            <dt>Year</dt>
+            <dd>2025</dd>
+            <dt>Programme</dt>
+            <dd>Geoinformatics</dd>
+            <dt>Platform</dt>
+            <dd>Unity 2022/2023 + Cesium for Unity 1.22.0</dd>
+          </dl>
+        </div>
+        <div class="col">
+          <dl class="meta">
+            <dt>Primary Data Source</dt>
+            <dd>NASA FIRMS (VIIRS SNPP NRT, MODIS NRT)</dd>
+            <dt>Weather Data</dt>
+            <dd>Open-Meteo Archive API</dd>
+            <dt>Coordinate System</dt>
+            <dd>WGS84 (EPSG:4326)</dd>
+            <dt>Language</dt>
+            <dd>C# (.NET, Unity scripting)</dd>
+            <dt>Study Areas</dt>
+            <dd>Paraguay, Portugal, Eastern Australia, Hawaii</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li><strong>Automated data pipeline</strong> — Fetches and processes NASA FIRMS fire detection records directly inside the Unity Editor; no external GIS software required.</li>
+        <li><strong>Three boundary modes</strong> — Named preset regions, user-defined custom bounding box, or imported shapefile boundary for flexible study area selection.</li>
+        <li><strong>Day-by-day timeline animation</strong> — Fires are grouped by detection date and animated chronologically to show the temporal progression of wildfire events.</li>
+        <li><strong>Fire clustering and LOD</strong> — Nearby fires are merged into scaled representative markers to maintain interactive frame rates with tens of thousands of detections.</li>
+        <li><strong>Burn scar visualization</strong> — Accumulated burn areas are projected onto the Cesium terrain surface and updated each day of the timeline.</li>
+        <li><strong>Weather data overlays</strong> — Temperature, wind vectors, and cloud cover layers loaded from Open-Meteo JSON data and rendered on the minimap.</li>
+        <li><strong>Orthographic minimap</strong> — A top-down 2D minimap displays fire positions, weather layers, and scene orientation in real time.</li>
+        <li><strong>Fly-through camera with annotations</strong> — Scripted camera paths with timed annotation cards allow presentation-quality scene walkthroughs and video export (MP4 / GIF).</li>
+        <li><strong>Confidence filtering</strong> — VIIRS low/nominal/high confidence classes are normalized to numeric scores; fire points below a configurable threshold are excluded from visualization.</li>
+        <li><strong>Performance presets</strong> — Quality and Performance runtime presets adjust particle budgets, smoke LOD, wind grid stride, and render scale from the in-game settings panel.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Study Areas</h2>
+      <p>Four geographically and ecologically diverse study areas were selected to validate the platform&#8217;s adaptability across different fire regimes and terrain complexities.</p>
+      <table class="area-grid">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Country</th>
+            <th>Area (km&#178;)</th>
+            <th>Fire Regime</th>
+            <th>Key Challenge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gran Chaco</td>
+            <td>Paraguay</td>
+            <td>~719,000</td>
+            <td>Savanna / agricultural</td>
+            <td>Baseline; highest detection density (13,279 fires in test range)</td>
+          </tr>
+          <tr>
+            <td>Iberian Peninsula</td>
+            <td>Portugal</td>
+            <td>~118,000</td>
+            <td>Mediterranean chaparral / eucalyptus</td>
+            <td>Steep terrain; high FRP crown fires; terrain snapping accuracy</td>
+          </tr>
+          <tr>
+            <td>Eastern Australia (NSW/QLD)</td>
+            <td>Australia</td>
+            <td>~980,000</td>
+            <td>Eucalyptus forest / temperate woodland</td>
+            <td>Large-scale load; 2019&#8211;20 Black Summer; clustering performance</td>
+          </tr>
+          <tr>
+            <td>Hawaiian Islands</td>
+            <td>USA (Hawaii)</td>
+            <td>~28,000</td>
+            <td>Tropical dry forest / grassland</td>
+            <td>Volcanic terrain extremes; 2023 Lahaina fire; sparse distribution</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>System Workflow Overview</h2>
+      <ol class="pipeline-steps">
+        <li><strong>Boundary definition</strong> &mdash; User selects a preset region, draws a custom bounding box, or imports a shapefile boundary in the Unity Editor pipeline tool.</li>
+        <li><strong>FIRMS data fetch</strong> &mdash; The pipeline queries the NASA FIRMS Area API, automatically chunking large date ranges into 5-day windows and merging/deduplicating results.</li>
+        <li><strong>Shapefile export</strong> &mdash; Fire point coordinates are exported as a shapefile (with WGS84 .prj) and a CSV report for archival and GIS compatibility.</li>
+        <li><strong>Scene initialisation</strong> &mdash; Unity loads the shapefile, applies confidence filtering, and waits for Cesium terrain tiles to stream before spawning fire objects.</li>
+        <li><strong>Coordinate transformation</strong> &mdash; Each fire&#8217;s WGS84 latitude/longitude is converted to Unity world space via <code>CesiumGeoreference</code> ECEF transformation.</li>
+        <li><strong>Timeline construction</strong> &mdash; Fire records are grouped by date, clustered for LOD, and stored; timeline autoplay advances day markers and burn scars incrementally.</li>
+        <li><strong>Interactive exploration</strong> &mdash; User navigates in real time: toggles weather overlays, adjusts settings, records fly-through paths, and exports video.</li>
+      </ol>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <p>Data-Driven Wildfire Spread Modeling Using Earth Observation Data with Interactive 3D Visualization in Unity</p>
+    <p>Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+    <p><a href="mailto:daniel.pavlacka@upol.cz">daniel.pavlacka@upol.cz</a> &mdash; <a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

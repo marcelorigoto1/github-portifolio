@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results — Data-Driven Wildfire Spread Modeling</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrapper">
+    <div class="header-text">
+      <h1>Data-Driven Wildfire Spread Modeling Using Earth Observation Data<br />with Interactive 3D Visualization in Unity</h1>
+      <p class="header-meta">Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+    </div>
+    <div class="header-badge">
+      <span class="badge-label">Master Thesis</span>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrapper">
+    <ul>
+      <li class="back-link"><a href="../index.html">&#8592; Portfolio</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="results.html" class="active">Results</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="wrapper">
+
+    <!-- Application screenshots -->
+    <div class="section">
+      <h2>Application Screenshots</h2>
+      <div class="info-box">
+        Screenshots will be added before final submission. Representative placeholders are shown below indicating the intended content of each view.
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-row">
+          <div class="gallery-cell">
+            <div class="screenshot-placeholder">
+              <strong>Main 3D View &mdash; Paraguay Fire Events</strong>
+              Cesium globe with active fire markers, smoke particles, and burn scars rendered on photorealistic terrain. Gran Chaco region, February&#8211;March 2026.
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="screenshot-placeholder">
+              <strong>Timeline Animation Panel</strong>
+              Day-by-day timeline slider showing fire spread progression. Burn scar accumulation visible across multiple days of the study period.
+            </div>
+          </div>
+        </div>
+        <div class="gallery-row">
+          <div class="gallery-cell">
+            <div class="screenshot-placeholder">
+              <strong>Minimap Weather Overlay</strong>
+              Orthographic top-down minimap with temperature, wind arrow, and cloud cover layers simultaneously enabled over the study region.
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="screenshot-placeholder">
+              <strong>Unity Editor Pipeline Tool</strong>
+              WildfirePipeline editor window showing boundary controls, date range, FIRMS collection selector, and run summary log.
+            </div>
+          </div>
+        </div>
+        <div class="gallery-row">
+          <div class="gallery-cell">
+            <div class="screenshot-placeholder">
+              <strong>Fly-Through Export with Annotations</strong>
+              In-progress fly-through recording showing an annotation card overlaid on the 3D scene with a waypoint sequence over Portugal.
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="screenshot-placeholder">
+              <strong>In-Game Settings Panel</strong>
+              Runtime pause settings menu showing toggles for smoke, wind arrows, connector fires, FPS counter, confidence threshold, and performance preset.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantitative results -->
+    <div class="section">
+      <h2>Quantitative Results</h2>
+      <p>
+        The following figures summarise the performance and data characteristics observed during platform
+        validation across the four study areas.
+      </p>
+      <table class="area-grid">
+        <thead>
+          <tr>
+            <th>Study Area</th>
+            <th>Date Range (test)</th>
+            <th>Raw Detections</th>
+            <th>After Confidence Filter</th>
+            <th>Final Markers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paraguay (Gran Chaco)</td>
+            <td>01 Feb &ndash; 10 Mar 2026</td>
+            <td>13,279</td>
+            <td>~9,800</td>
+            <td>~3,200 (clustered)</td>
+          </tr>
+          <tr>
+            <td>Portugal</td>
+            <td>Summer season sample</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>TBD</td>
+          </tr>
+          <tr>
+            <td>Eastern Australia (NSW/QLD)</td>
+            <td>Black Summer 2019&#8211;20</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>TBD</td>
+          </tr>
+          <tr>
+            <td>Hawaii</td>
+            <td>Aug 2023 (Lahaina)</td>
+            <td>TBD</td>
+            <td>TBD</td>
+            <td>TBD</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:0.6rem; font-size:0.85rem; color:#555;">
+        TBD values will be completed in the final thesis text. Paraguay figures are from the primary validation run documented in the methodology chapter.
+      </p>
+    </div>
+
+    <!-- Implemented features -->
+    <div class="section">
+      <h2>Implemented System Components</h2>
+      <h3>Data Pipeline (Unity Editor)</h3>
+      <ul class="feature-list">
+        <li>FIRMS Area API client with automatic 5-day chunking and deduplication</li>
+        <li>Shapefile writer (.shp / .dbf / .shx / .prj) for fire points and boundary polygons</li>
+        <li>CSV report with per-detection attributes (lat, lon, FRP, brightness, confidence, date)</li>
+        <li>Run summary log with total counts, centroid coordinates, and date range</li>
+        <li>Preset region library (Paraguay, Portugal, Australia, Hawaii) with centroid preview</li>
+      </ul>
+      <h3>Core Visualisation Engine</h3>
+      <ul class="feature-list">
+        <li>WGS84 &#8594; ECEF &#8594; Unity world-space coordinate pipeline via Cesium for Unity</li>
+        <li>Terrain-readiness spawn gate with exponential back-off (up to 15 retries, 0.5&#8211;2 s)</li>
+        <li>Fire clustering: radius-based merge with sqrt(count) scale + tiny-fire merge stage</li>
+        <li>Burn scar projection with terrain vertex conformance and geographic distance merging</li>
+        <li>Day-by-day timeline with incremental coroutine construction and configurable playback speed</li>
+        <li>Confidence filtering with auto-fallback to unfiltered load if result would be empty</li>
+      </ul>
+      <h3>Weather and Environmental Overlays</h3>
+      <ul class="feature-list">
+        <li>Temperature layer: JSON loader, blue&#8211;red colour ramp, optional location merging, TextMesh labels</li>
+        <li>Wind layer: directional arrow grid with configurable stride-based update for CPU savings</li>
+        <li>Cloud cover layer: disc markers with clear&#8211;overcast colour ramp, transparency support</li>
+        <li>All layers registered on the orthographic minimap; togglable independently at runtime</li>
+      </ul>
+      <h3>Camera and Presentation Tools</h3>
+      <ul class="feature-list">
+        <li>Fly-through path system: ECEF waypoints, configurable speed, CesiumOriginShift suspension during playback</li>
+        <li>Annotation system: per-waypoint-range text and image cards, draggable during recording, persisted screen position</li>
+        <li>MP4 and GIF export with configurable resolution, FPS, and GIF width</li>
+        <li>Camera-look gate: simulation advances only when viewport aims at active fire bounds</li>
+      </ul>
+      <h3>User Interface</h3>
+      <ul class="feature-list">
+        <li>Main menu with preset selection, date range entry, and performance preset toggle</li>
+        <li>Orthographic minimap with zoom, pan, and per-layer visibility controls</li>
+        <li>In-game pause settings panel: smoke, wind, connector fires, FPS counter, seconds-per-day, confidence threshold</li>
+        <li>FPS counter overlay persisted via PlayerPrefs</li>
+        <li>Runtime performance preset (Quality / Performance) affecting render scale, particle budgets, and LOD</li>
+      </ul>
+    </div>
+
+    <!-- Limitations -->
+    <div class="section">
+      <h2>Limitations and Future Work</h2>
+      <ul class="feature-list">
+        <li><strong>No urban / land-use mask</strong> &mdash; Industrial heat sources in city centres can produce false-positive detections. A future version should apply an urban footprint mask to filter out known non-wildfire hotspots.</li>
+        <li><strong>Single-ray terrain snapping</strong> &mdash; The current terrain height query uses a single vertical raycast. On steep volcanic terrain (Hawaii) or deep ravines, a multi-ray fan approach would improve surface adhesion.</li>
+        <li><strong>No fire spread simulation model</strong> &mdash; The platform animates historical detections chronologically but does not model or predict fire spread. Integration of a physics-based spread model (e.g., Rothermel) is planned as future work.</li>
+        <li><strong>Weather data resolution</strong> &mdash; Open-Meteo point-based weather data has coarser spatial resolution than the fire detections. Higher-resolution gridded weather products (e.g., ERA5 reanalysis) would improve overlay accuracy.</li>
+        <li><strong>Mobile and web deployment</strong> &mdash; The current build targets desktop Windows. A WebGL or mobile build would broaden accessibility for emergency management stakeholders.</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <p>Data-Driven Wildfire Spread Modeling Using Earth Observation Data with Interactive 3D Visualization in Unity</p>
+    <p>Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+    <p><a href="mailto:daniel.pavlacka@upol.cz">daniel.pavlacka@upol.cz</a> &mdash; <a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

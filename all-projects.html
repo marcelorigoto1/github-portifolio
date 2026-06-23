@@ -20,43 +20,68 @@
             </a>
         </div>
         <div class="navbar-title">E-Portfolio - Marcelo Alves Rigoto</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         <div class="navbar-links">
             <a href="index.html">Home</a>
             <a href="about-me.html">About Me</a>
             <a href="internship.html">Internship</a>
+            <a href="thesis/index.html">Thesis</a>
         </div>
     </nav>
+
+    <!-- Page Hero -->
+    <div class="projects-hero">
+        <h1>Projects</h1>
+        <p>A collection of geospatial work spanning web maps, dashboards, storymaps, and academic activities.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="webmaps">🗺 WebMaps</button>
+        <button class="filter-btn" data-filter="dashboards">📊 Dashboards</button>
+        <button class="filter-btn" data-filter="storymaps">📖 Storymaps</button>
+        <button class="filter-btn" data-filter="certificates">🏅 Certificates</button>
+    </div>
 
     <!-- Projects Section -->
     <section id="projects">
 
         <!-- WebMaps -->
-                <div class="project-category">
-                    <h2>WebMaps</h2>
-                    <div class="scroll-container">
+                <div class="project-category fade-in" data-category="webmaps" id="webmaps">
+                    <h2><span class="cat-icon">🗺</span> WebMaps</h2>
+                    <div class="project-grid">
                         <a href="https://zgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=cb1b1aa81fa64804a01501d5381f9f64" target="_blank" class="project-card">
-                            <img src="assets\css\images\parksyoung.png" alt="Park for Young People Salzburg">
+                            <div class="card-img-wrap">
+                                <img src="assets\css\images\parksyoung.png" alt="Park for Young People Salzburg">
+                                <div class="card-overlay"><span>View &#8594;</span></div>
+                            </div>
                             <div class="project-content">
                                 <h3>Park for Young People Salzburg</h3>
                                 <p>WebMap used for an application in ESRI Instant Apps.</p>
                             </div>
                         </a>
                         <a href="https://marcelorigoto1.github.io/BikeClub/" target="_blank" class="project-card">
-                            <img src="assets\css\images\bikeclub.png" alt="Bike Club - Salzburg">
+                            <div class="card-img-wrap">
+                                <img src="assets\css\images\bikeclub.png" alt="Bike Club - Salzburg">
+                                <div class="card-overlay"><span>View &#8594;</span></div>
+                            </div>
                             <div class="project-content">
                                 <h3>Bike Club</h3>
-                                <p>WebMap with statistics and Media developed for GeoVisualization class.
-                                </p>
+                                <p>WebMap with statistics and Media developed for GeoVisualization class.</p>
                             </div>
                         </a>
                     </div>
                 </div>
         <!-- Dashboards Section -->
-        <div class="project-category">
-            <h2>Dashboards</h2>
-            <div class="scroll-container">
+        <div class="project-category fade-in" data-category="dashboards" id="dashboards">
+            <h2><span class="cat-icon">📊</span> Dashboards</h2>
+            <div class="project-grid">
                 <a href="https://zgis.maps.arcgis.com/home/item.html?id=df743dadd83f41589145739f4d5639b8" target="_blank" class="project-card">
-                    <img src="assets\css\images\dashboard_saude.png" alt="Los Angeles Health Care Facilities">
+                    <div class="card-img-wrap">
+                        <img src="assets\css\images\dashboard_saude.png" alt="Los Angeles Health Care Facilities">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
                     <div class="project-content">
                         <h3>Los Angeles Health Care Facilities</h3>
                         <p>Dashboard with locations and categories of Health Care Facilities in Los Angeles.</p>
@@ -65,19 +90,25 @@
             </div>
         </div>
 
-        <!-- Environmental Change Section -->
-        <div class="project-category">
-            <h2>Storymaps</h2>
-            <div class="scroll-container">
+        <!-- Storymaps Section -->
+        <div class="project-category fade-in" data-category="storymaps" id="storymaps">
+            <h2><span class="cat-icon">📖</span> Storymaps</h2>
+            <div class="project-grid">
                 <a href="https://storymaps.arcgis.com/stories/292e899cab144c149722cf794ed6b958" target="_blank" class="project-card">
-                    <img src="assets\css\images\spatial_analysis.png" alt="Spatial Analysis Lab">
+                    <div class="card-img-wrap">
+                        <img src="assets\css\images\spatial_analysis.png" alt="Spatial Analysis Lab">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
                     <div class="project-content">
                         <h3>Spatial Analysis Lab</h3>
                         <p>Storymap containing the exercise using ESRI Spatial Analysis tools.</p>
                     </div>
                 </a>
                 <a href="https://storymaps.arcgis.com/stories/9ab52cc94e81489a8c77e879e72344cd" target="_blank" class="project-card">
-                    <img src="assets\css\images\3d_visualization.png" alt="Salzburg 3D Map">
+                    <div class="card-img-wrap">
+                        <img src="assets\css\images\3d_visualization.png" alt="Salzburg 3D Map">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
                     <div class="project-content">
                         <h3>Salzburg 3D Map</h3>
                         <p>Storymap containing a 3D visualization of the city of Salzburg.</p>
@@ -87,18 +118,24 @@
         </div>
 
         <!-- Certificates Section -->
-        <div class="project-category">
-            <h2>Certificates</h2>
-            <div class="scroll-container">
+        <div class="project-category fade-in" data-category="certificates" id="certificates">
+            <h2><span class="cat-icon">🏅</span> Certificates</h2>
+            <div class="project-grid">
                 <a href="issonvis.html" target="_blank" class="project-card">
-                    <img src="assets\css\images\issonvis.png" alt="ISSonVIS 2025">
+                    <div class="card-img-wrap">
+                        <img src="assets\css\images\issonvis.png" alt="ISSonVIS 2025">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
                     <div class="project-content">
                         <h3>ISSonVIS 2025</h3>
                         <p>Exploring visual ethics and trust in cartography at ISSonVIS 2025, Palacký University.</p>
                     </div>
                 </a>
                 <a href="bip.html" target="_blank" class="project-card">
-                    <img src="assets\css\images\bip.png" alt="BIP 2025">
+                    <div class="card-img-wrap">
+                        <img src="assets\css\images\bip.png" alt="BIP 2025">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
                     <div class="project-content">
                         <h3>BIP 2025</h3>
                         <p>Blended Intensive Program hosted by Romenia University.</p>
@@ -117,6 +154,40 @@
             <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palacký University Olomouc">
         </div>
     </footer>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Fade-in on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Filter bar
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categories = document.querySelectorAll('.project-category');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                categories.forEach(cat => {
+                    if (filter === 'all' || cat.dataset.category === filter) {
+                        cat.style.display = '';
+                        // re-trigger fade if not yet visible
+                        if (!cat.classList.contains('visible')) observer.observe(cat);
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+                // scroll to section when a specific filter is chosen
+                if (filter !== 'all') {
+                    const target = document.getElementById(filter);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

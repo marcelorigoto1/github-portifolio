@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Thesis &mdash; Marcelo Alves Rigoto</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    h1, h2, h3 {
+      color: #2dd4bf;
+    }
+    p, li {
+      color: #8b949e;
+      line-height: 1.7;
+    }
+    strong {
+      color: #e6edf3;
+    }
+    .thesis-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 1px solid #30363d;
+    }
+    .thesis-hero h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    .thesis-hero p.subtitle {
+      font-size: 1.1em;
+      color: #8b949e;
+      margin: 0;
+    }
+    .badge {
+      display: inline-block;
+      background-color: rgba(45, 212, 191, 0.12);
+      color: #2dd4bf;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      margin-top: 16px;
+    }
+    .section-block {
+      margin-bottom: 40px;
+    }
+    .section-block h2 {
+      font-size: 1.5em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(45, 212, 191, 0.2);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .info-card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .info-card span {
+      display: block;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #2dd4bf;
+      margin-bottom: 6px;
+    }
+    .info-card p {
+      margin: 0;
+      color: #e6edf3;
+      font-size: 0.95em;
+    }
+    .placeholder-note {
+      background-color: #161b22;
+      border-left: 3px solid #2dd4bf;
+      padding: 16px 20px;
+      border-radius: 8px;
+      color: #8b949e;
+      font-style: italic;
+      margin-top: 16px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 6px;
+    }
+    @media (max-width: 768px) {
+      .thesis-hero h1 {
+        font-size: 1.6em;
+      }
+      .thesis-hero {
+        padding: 40px 16px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank">
+        <img src="assets/css/images/linkedin-icon.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/marcelorigoto1" target="_blank">
+        <img src="assets/css/images/github.png" alt="GitHub">
+      </a>
+    </div>
+    <div class="navbar-title">E-Portfolio &mdash; Marcelo Alves Rigoto</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <div class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="all-projects.html">Projects</a>
+      <a href="about-me.html">About Me</a>
+      <a href="internship.html">Internship</a>
+      <a href="thesis/index.html">Thesis</a>
+    </div>
+  </nav>
+
+  <main style="max-width: 900px; margin: 0 auto; padding: 0 20px 60px;">
+
+    <!-- Hero -->
+    <div class="thesis-hero">
+      <h1>Master Thesis</h1>
+      <p class="subtitle">Copernicus Master in Digital Earth &mdash; GeoVisualization Track</p>
+      <span class="badge">In Progress &mdash; 2025 / 2026</span>
+    </div>
+
+    <!-- Key Info -->
+    <div class="section-block" style="margin-top: 40px;">
+      <h2>Overview</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <span>University</span>
+          <p>Palack&#253; University Olomouc (UPOL)</p>
+        </div>
+        <div class="info-card">
+          <span>Programme</span>
+          <p>Copernicus Master in Digital Earth</p>
+        </div>
+        <div class="info-card">
+          <span>Specialization</span>
+          <p>GeoVisualization</p>
+        </div>
+        <div class="info-card">
+          <span>Status</span>
+          <p>In Progress</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Title & Abstract -->
+    <div class="section-block">
+      <h2>Title &amp; Abstract</h2>
+      <div class="placeholder-note">
+        Thesis title and abstract will be added here once finalized.
+      </div>
+    </div>
+
+    <!-- Research Questions -->
+    <div class="section-block">
+      <h2>Research Questions</h2>
+      <div class="placeholder-note">
+        Research questions will be added here once defined.
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <div class="section-block">
+      <h2>Methodology</h2>
+      <div class="placeholder-note">
+        Methodology and tools will be described here as the research progresses.
+      </div>
+    </div>
+
+    <!-- Tools & Technologies -->
+    <div class="section-block">
+      <h2>Expected Tools &amp; Technologies</h2>
+      <ul>
+        <li><strong>GIS / Spatial Analysis:</strong> QGIS, ArcGIS Pro, ArcGIS Online</li>
+        <li><strong>Visualization:</strong> D3.js, Mapbox, Leaflet</li>
+        <li><strong>Programming:</strong> Python, JavaScript</li>
+        <li><strong>Data:</strong> Copernicus Open Access Hub, OpenStreetMap, national spatial datasets</li>
+      </ul>
+    </div>
+
+    <!-- Progress -->
+    <div class="section-block">
+      <h2>Progress &amp; Updates</h2>
+      <div class="placeholder-note">
+        Progress updates and milestones will be documented here throughout the thesis process.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logos">
+      <p>Contact: marcelorigoto1@gmail.com</p>
+      <img src="assets/css/images/EN Co-funded by the EU_POS.jpg" alt="European Union">
+      <img src="assets/css/images/PLUS Logo englisch Farbe.jpg" alt="Paris Lodron University of Salzburg">
+      <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palack&#253; University Olomouc">
+    </div>
+  </footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology — Data-Driven Wildfire Spread Modeling</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrapper">
+    <div class="header-text">
+      <h1>Data-Driven Wildfire Spread Modeling Using Earth Observation Data<br />with Interactive 3D Visualization in Unity</h1>
+      <p class="header-meta">Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+    </div>
+    <div class="header-badge">
+      <span class="badge-label">Master Thesis</span>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="wrapper">
+    <ul>
+      <li class="back-link"><a href="../index.html">&#8592; Portfolio</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="methodology.html" class="active">Methodology</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="wrapper">
+
+    <!-- Phase 1 -->
+    <div class="section">
+      <h2>Phase 1 &mdash; Data Acquisition</h2>
+      <p>
+        All fire detection data originates from the NASA Fire Information for Resource Management System (FIRMS),
+        a publicly accessible service that distributes near-real-time and archived fire detections produced by the
+        VIIRS (Visible Infrared Imaging Radiometer Suite) and MODIS (Moderate Resolution Imaging Spectroradiometer)
+        sensors aboard multiple satellites. Each detection record includes geographic coordinates (WGS84
+        latitude/longitude), acquisition date and time, brightness temperature, Fire Radiative Power (FRP),
+        and a confidence classification.
+      </p>
+      <h3>FIRMS Area API Integration</h3>
+      <p>
+        The platform queries the FIRMS Area endpoint directly from within the Unity Editor. Because the API
+        restricts each request to a maximum of 5 days, large date ranges are automatically chunked into
+        sequential 5-day windows; results are merged and deduplicated by geographic coordinate and acquisition
+        date before export. This prevents undercounting from single-window queries on long study periods.
+      </p>
+      <h3>Supported Fire Collections</h3>
+      <ul class="feature-list">
+        <li><strong>VIIRS SNPP NRT</strong> &mdash; 375 m resolution, near-real-time; primary collection used in all study areas.</li>
+        <li><strong>VIIRS NOAA-20 NRT</strong> &mdash; Complementary VIIRS sensor providing additional overpasses.</li>
+        <li><strong>MODIS NRT</strong> &mdash; 1 km resolution; used for cross-validation on older archived events.</li>
+        <li><strong>VIIRS SNPP SP</strong> &mdash; Standard product (non-NRT) for historical analysis.</li>
+      </ul>
+      <h3>Confidence Filtering</h3>
+      <p>
+        VIIRS encodes confidence as categorical classes (low, nominal, high). The pipeline normalises
+        these to numeric scores (low = 30, nominal = 70, high = 95) and applies a configurable minimum
+        threshold (default 80) during scene load. If filtering would produce an empty dataset for a given
+        load, the system automatically falls back to the full unfiltered set and logs a warning, preventing
+        broken visualisations from over-strict thresholds.
+      </p>
+      <h3>Boundary Definition Modes</h3>
+      <ul class="feature-list">
+        <li><strong>Preset regions</strong> &mdash; Paraguay (Gran Chaco), Portugal, Eastern Australia, and Hawaii are registered as named bounding boxes selectable from the Editor pipeline tool.</li>
+        <li><strong>Custom bounding box</strong> &mdash; User enters west/south/east/north decimal degree values manually. The manager normalises coordinate ordering and validates the API constraints.</li>
+        <li><strong>Shapefile boundary</strong> &mdash; An arbitrary polygon shapefile is accepted as the study boundary; the pipeline computes the bounding box of the shapefile geometry to query FIRMS.</li>
+      </ul>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="section">
+      <h2>Phase 2 &mdash; Data Processing and Unity Integration</h2>
+      <p>
+        After acquisition, fire detection records are processed through several stages before being
+        visualised in the 3D scene. All processing runs in managed C# code within the Unity runtime,
+        using only the Unity scripting API and the Cesium for Unity package.
+      </p>
+      <h3>Shapefile Export</h3>
+      <p>
+        Each pipeline run exports three geospatial files: a fire points shapefile (.shp/.dbf/.shx),
+        a boundary polygon shapefile, and a WGS84 projection file (.prj). A timestamped CSV report
+        is also written. The export base name follows the convention
+        <code>wildfire_&lt;startdate&gt;_&lt;enddate&gt;</code>. These files are compatible with
+        standard GIS desktop software (QGIS, ArcGIS) for independent post-processing.
+      </p>
+      <h3>Coordinate Transformation (WGS84 to Unity World Space)</h3>
+      <p>
+        The central technical challenge of this thesis is converting WGS84 geographic coordinates into
+        Unity Cartesian world positions without introducing floating-point precision errors at global
+        scale. This is resolved using Cesium for Unity&#8217;s Earth-Centred Earth-Fixed (ECEF) pipeline:
+      </p>
+      <ol class="pipeline-steps">
+        <li>Each fire&#8217;s latitude and longitude are converted to ECEF coordinates using the WGS84 ellipsoid.</li>
+        <li><code>CesiumGeoreference.TransformEarthCenteredEarthFixedPositionToUnity()</code> maps the ECEF position into the current Unity local coordinate space.</li>
+        <li>The <code>CesiumOriginShift</code> component moves the coordinate origin to track the camera, preventing precision degradation when viewing areas far from the scene origin. Fire anchors store ECEF coordinates and recompute their Unity positions whenever the origin shifts.</li>
+        <li>A terrain-readiness gate waits for Cesium mesh tiles to stream before spawning fire objects, using an exponential back-off retry (up to 15 attempts, 0.5&#8211;2 s apart) to verify that terrain raycasts at fire locations return valid hits.</li>
+      </ol>
+      <h3>Fire Clustering and LOD</h3>
+      <p>
+        Large datasets (tens of thousands of detections) are clustered in two stages before visualisation.
+        First, fires within a configurable radius are merged into a single scaled marker; the marker
+        scale is proportional to the square root of the cluster member count. Second, a tiny-fire merge
+        stage aggregates low-intensity fires below an FRP threshold into a larger representative marker,
+        reducing particle instance count without losing overall fire extent information. Distance-based
+        LOD disables particle effects and smoke for fires beyond a configurable camera distance.
+      </p>
+      <h3>Burn Scar Projection</h3>
+      <p>
+        Accumulated burn areas are computed from fire detection clusters. Each scar is projected onto
+        the Cesium terrain surface using downward terrain raycasts, with full vertex-level conformance
+        for steep slopes. Nearby same-day scars are merged using geographic distance in metres to
+        avoid overlapping objects. The default terrain attachment offset is 0.2 m to prevent z-fighting.
+      </p>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="section">
+      <h2>Phase 3 &mdash; Interactive Visualisation</h2>
+      <p>
+        The runtime environment provides a full interactive application built on Unity&#8217;s scene graph,
+        with a main menu, in-game settings panel, and multiple real-time data overlays.
+      </p>
+      <h3>Timeline Animation</h3>
+      <p>
+        Fire detections are grouped by acquisition date and stored as an ordered list of timeline entries.
+        Autoplay advances through dates at a configurable rate (seconds per day, adjustable from the
+        in-game settings). Each day&#8217;s fires are spawned incrementally using a coroutine to avoid
+        single-frame hitching on large datasets. Timeline startup uses an incremental build pass
+        (<code>BuildAndStoreDayEntriesIncremental</code>) to further reduce first-frame latency after
+        scene resets.
+      </p>
+      <h3>Weather Data Layers</h3>
+      <p>
+        Three weather overlay layers are registered on the orthographic minimap view and can be
+        toggled independently at runtime:
+      </p>
+      <ul class="feature-list">
+        <li><strong>Temperature layer</strong> &mdash; Loads daily mean/max/min temperature records from Open-Meteo JSON. Markers are coloured on a blue-to-red gradient and scaled by temperature value. Optional location merging averages multiple records at the same coordinates to reduce visual clutter.</li>
+        <li><strong>Wind layer</strong> &mdash; Displays directional wind arrows on a spatial grid. Arrow orientation and length represent direction and speed respectively. Grid animation can run every N frames (configurable stride) to reduce CPU overhead.</li>
+        <li><strong>Cloud cover layer</strong> &mdash; Reads cloud cover mean and maximum values from Open-Meteo JSON. Flat disc markers are coloured on a clear-sky to overcast ramp using a transparent material.</li>
+      </ul>
+      <h3>Fly-Through Camera and Annotation System</h3>
+      <p>
+        The fly-through system supports scripted camera paths defined by waypoints stored as ECEF coordinates.
+        Each path segment plays back at a configurable travel speed (default 3,000 m/s for continental
+        distances). During playback all active <code>CesiumOriginShift</code> components are suspended
+        to prevent coordinate drift. Annotations (text and optional image overlays) are attached to
+        waypoint ranges; they appear as draggable cards during recording and replay at the same screen
+        position during export. Paths and annotations are serialised to JSON for persistence between
+        Unity sessions. Export quality controls include resolution presets, export FPS, GIF FPS, and
+        GIF width.
+      </p>
+      <h3>Performance Architecture</h3>
+      <p>
+        A camera-look gate advances the fire simulation and timeline only when the viewport is aimed
+        at active fire bounds, reducing unnecessary computation when the camera is facing away. Runtime
+        performance presets (Quality / Performance) apply consistently across particle budgets, smoke LOD,
+        wind grid stride, and render scale, and are persisted via Unity&#8217;s PlayerPrefs system so
+        settings survive application restarts.
+      </p>
+    </div>
+
+    <!-- Tools -->
+    <div class="section">
+      <h2>Tools and Technologies</h2>
+      <div class="two-col">
+        <div class="col">
+          <h3>Core Platform</h3>
+          <ul class="feature-list">
+            <li>Unity 2022 / 2023 (C# scripting)</li>
+            <li>Cesium for Unity 1.22.0</li>
+            <li>ArcGIS Maps SDK for Unity</li>
+            <li>Unity Input System</li>
+            <li>Unity Universal Render Pipeline (URP)</li>
+          </ul>
+          <h3>Geospatial Libraries</h3>
+          <ul class="feature-list">
+            <li>NetTopologySuite (geometry operations)</li>
+            <li>ProjNET / GeoAPI (coordinate projection)</li>
+            <li>GDAL (shapefile I/O)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Data Sources</h3>
+          <ul class="feature-list">
+            <li>NASA FIRMS Area API (fire detections)</li>
+            <li>Open-Meteo Archive API (weather)</li>
+            <li>Cesium ion (global terrain + imagery streaming)</li>
+          </ul>
+          <h3>Development Environment</h3>
+          <ul class="feature-list">
+            <li>Visual Studio / VS Code</li>
+            <li>QGIS (shapefile validation)</li>
+            <li>W3C HTML Validator (this website)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <p>Data-Driven Wildfire Spread Modeling Using Earth Observation Data with Interactive 3D Visualization in Unity</p>
+    <p>Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+    <p><a href="mailto:daniel.pavlacka@upol.cz">daniel.pavlacka@upol.cz</a> &mdash; <a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

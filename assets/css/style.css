@@ -3,10 +3,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: #000000; 
-    background: linear-gradient(to bottom right, #f4f4f4, #515b64);
+    color: #e6edf3;
+    background: linear-gradient(135deg, #0d1117 0%, #111827 50%, #1a2332 100%);
     background-attachment: fixed;
-    height: 100vh; 
+    min-height: 100vh;
 }
 
 /* Main Content */
@@ -26,8 +26,8 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(ellipse at top, #616161, transparent),
-                radial-gradient(ellipse at bottom, #1C1C1C, transparent);
+    background: radial-gradient(ellipse at top left, rgba(45, 212, 191, 0.08), transparent),
+                radial-gradient(ellipse at bottom right, rgba(13, 148, 136, 0.06), transparent);
     z-index: -1;
 }
 
@@ -41,30 +41,38 @@ body {
 }
 
 .timeline-column {
-    background-color: #424242;
+    background-color: #161b22;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     padding: 20px;
-    color: #E0E0E0;
+    color: #e6edf3;
 }
 
 .timeline-column h2 {
     text-align: center;
-    color: #f5f5f5;
+    color: #2dd4bf;
     margin-bottom: 20px;
     font-size: 1.8em;
+    border-bottom: 2px solid rgba(45, 212, 191, 0.2);
+    padding-bottom: 10px;
 }
 
 .timeline-item {
-    background-color: #066b70;
+    background-color: #1c2128;
+    border-left: 3px solid #2dd4bf;
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: border-left-width 0.2s ease;
+}
+
+.timeline-item:hover {
+    border-left-width: 5px;
 }
 
 .timeline-item h3 {
-    color: #fafafa;
+    color: #2dd4bf;
     margin: 0;
     font-size: 1.3em;
 }
@@ -73,7 +81,7 @@ body {
     margin: 5px 0;
     font-size: 0.95em;
     line-height: 1.6;
-    color: #E0E0E0;
+    color: #8b949e;
 }
 
 /* Navbar */
@@ -81,13 +89,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #424242; 
+    background-color: #0d1117;
     color: #FFFFFF;
     padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid #30363d;
 }
 
 .navbar-title {
@@ -123,28 +132,119 @@ body {
 }
 
 .navbar-links a:hover {
-    color: #066b70; 
+    color: #2dd4bf;
     text-decoration: underline;
 }
 
 
 /* Footer Adjustments */
 .footer {
-    background-color: #FAFAFA;
-    color: #101010;
-    padding: 20px 0;
+    background-color: #0d1117;
+    color: #8b949e;
+    padding: 30px 20px;
     text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #30363d;
 }
 
 .footer-logos {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-logos p {
+    width: 100%;
+    margin: 0 0 10px;
+    color: #e0e0e0;
 }
 
 .footer-logos img {
     height: 50px;
     object-fit: contain;
+}
+
+/* Hamburger toggle button */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.6em;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+}
+
+/* =====================
+   Mobile Responsive
+   ===================== */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    .social-icons {
+        order: 0;
+    }
+
+    .navbar-title {
+        font-size: 1em;
+        order: 1;
+        flex: 1;
+        text-align: center;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        background-color: #161b22;
+        border-radius: 6px;
+        overflow: hidden;
+        gap: 0;
+    }
+
+    .navbar-links.nav-open {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 12px 20px;
+        margin: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 20px 12px !important;
+    }
+
+    .footer-logos {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-logos img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-title {
+        font-size: 0.85em;
+    }
 }
 
 

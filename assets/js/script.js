@@ -1,3 +1,22 @@
+// Hamburger menu toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".navbar-links");
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("nav-open");
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("nav-open");
+            });
+        });
+    }
+});
+
 // Handle hover image swapping for projects
 document.addEventListener("DOMContentLoaded", () => {
     const projectImages = document.querySelectorAll(".project img");
