@@ -4,33 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Results — Data-Driven Wildfire Spread Modeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrapper">
-    <div class="header-text">
-      <h1>Data-Driven Wildfire Spread Modeling Using Earth Observation Data<br />with Interactive 3D Visualization in Unity</h1>
-      <p class="header-meta">Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank">
+            <img src="../assets/css/images/linkedin-icon.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/marcelorigoto1" target="_blank">
+            <img src="../assets/css/images/github.png" alt="GitHub">
+        </a>
     </div>
-    <div class="header-badge">
-      <span class="badge-label">Master Thesis</span>
+    <div class="navbar-title">E-Portfolio - Marcelo Alves Rigoto</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <div class="navbar-links">
+        <a href="../index.html">Home</a>
+        <a href="../about-me.html">About Me</a>
+        <a href="../all-projects.html">Projects</a>
+        <a href="../internship.html">Internship</a>
+        <a href="index.html">Thesis</a>
     </div>
-  </div>
-</header>
+</nav>
 
-<nav class="site-nav">
+<div class="thesis-subnav">
   <div class="wrapper">
+    <span class="thesis-subnav-label">Data-Driven Wildfire Spread Modeling <span class="badge-label">Master Thesis</span></span>
     <ul>
-      <li class="back-link"><a href="../index.html">&#8592; Portfolio</a></li>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Overview</a></li>
       <li><a href="methodology.html">Methodology</a></li>
       <li><a href="results.html" class="active">Results</a></li>
       <li><a href="downloads.html">Downloads</a></li>
     </ul>
   </div>
-</nav>
+</div>
 
 <main class="main-content">
   <div class="wrapper">
@@ -38,162 +51,239 @@
     <!-- Application screenshots -->
     <div class="section">
       <h2>Application Screenshots</h2>
-      <div class="info-box">
-        Screenshots will be added before final submission. Representative placeholders are shown below indicating the intended content of each view.
-      </div>
-
       <div class="gallery">
         <div class="gallery-row">
           <div class="gallery-cell">
-            <div class="screenshot-placeholder">
-              <strong>Main 3D View &mdash; Paraguay Fire Events</strong>
-              Cesium globe with active fire markers, smoke particles, and burn scars rendered on photorealistic terrain. Gran Chaco region, February&#8211;March 2026.
-            </div>
+            <img src="img/desktop-build-jasper.jpg" alt="Desktop build showing the 2024 Jasper wildfire on 23 July, with wind arrows, burn scars, timeline, and minimap" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <p style="font-size:0.82rem; color:#8b949e; margin-top:0.4rem;">Desktop reference build &mdash; full feature set, including accumulated burn scars and the minimap/compass.</p>
           </div>
           <div class="gallery-cell">
-            <div class="screenshot-placeholder">
-              <strong>Timeline Animation Panel</strong>
-              Day-by-day timeline slider showing fire spread progression. Burn scar accumulation visible across multiple days of the study period.
-            </div>
-          </div>
-        </div>
-        <div class="gallery-row">
-          <div class="gallery-cell">
-            <div class="screenshot-placeholder">
-              <strong>Minimap Weather Overlay</strong>
-              Orthographic top-down minimap with temperature, wind arrow, and cloud cover layers simultaneously enabled over the study region.
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <div class="screenshot-placeholder">
-              <strong>Unity Editor Pipeline Tool</strong>
-              WildfirePipeline editor window showing boundary controls, date range, FIRMS collection selector, and run summary log.
-            </div>
-          </div>
-        </div>
-        <div class="gallery-row">
-          <div class="gallery-cell">
-            <div class="screenshot-placeholder">
-              <strong>Fly-Through Export with Annotations</strong>
-              In-progress fly-through recording showing an annotation card overlaid on the 3D scene with a waypoint sequence over Portugal.
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <div class="screenshot-placeholder">
-              <strong>In-Game Settings Panel</strong>
-              Runtime pause settings menu showing toggles for smoke, wind arrows, connector fires, FPS counter, confidence threshold, and performance preset.
-            </div>
+            <img src="img/browser-build-jasper.jpg" alt="Browser (WebGL) build showing the same Jasper wildfire scene, used in the comparative study" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <p style="font-size:0.82rem; color:#8b949e; margin-top:0.4rem;">Browser (WebGL) build &mdash; the reduced-feature build participants actually evaluated, reachable via a single link.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Quantitative results -->
+    <!-- User evaluation study -->
     <div class="section">
-      <h2>Quantitative Results</h2>
+      <h2>User Evaluation Study</h2>
       <p>
-        The following figures summarise the performance and data characteristics observed during platform
-        validation across the four study areas.
+        The thesis's empirical evaluation is a comparative user study with <strong>68 participants</strong>. Each
+        participant explored three tools in turn, one presenting the 2024 Jasper wildfire through this Unity
+        WebGL build, one presenting the August 2022 Serra da Estrela fire (Portugal) through an ArcGIS Online
+        Experience Builder application, and one presenting the June 2022 Sierra de la Culebra fire (Spain) through
+        kepler.gl &mdash; a terrain-free browser dashboard used as a methodological control. Each tool was paired
+        with a different real MODIS-derived event of comparable scale and mountainous terrain, specifically to
+        prevent participants from answering later comprehension questions from what they'd already learned about
+        an earlier tool.
+      </p>
+      <h3>What Was Measured</h3>
+      <ul class="feature-list">
+        <li><strong>Comprehension</strong> &mdash; four factual questions (event duration, detections on a stated date, day of greatest activity, terrain description), scored against a predefined answer key and recorded only for the first tool each participant saw, so the score isn't inflated by task familiarity.</li>
+        <li><strong>Adapted usability</strong> &mdash; a ten-item System Usability Scale (0&ndash;100), with four items reworded for a wildfire visualization; recorded for every tool.</li>
+        <li><strong>Rating items</strong> &mdash; six five-point items on location identification, day-to-day change, terrain context, distinguishing detections from effects, marker-intensity meaning, and sustained attention.</li>
+        <li><strong>Open-ended responses</strong> &mdash; three free-text questions asked once, after all three tools, on what worked, what confused, and what to improve.</li>
+      </ul>
+      <h3>Procedure</h3>
+      <p>
+        The study ran entirely online via six versions of a Google Form, one per presentation order, so that
+        roughly a third of participants saw each tool first (21 began with kepler.gl, 24 with the Experience
+        Builder, 23 with the Unity application). Each participant was given the same guided task &mdash; locate
+        the affected area, follow the fire across days, identify the day of greatest activity &mdash; before
+        answering that tool's questionnaire block.
+      </p>
+    </div>
+
+    <!-- Headline finding -->
+    <div class="section">
+      <h2>Headline Finding: Terrain Is a Precondition, Not a Decoration</h2>
+      <p>
+        The strongest and clearest result in the study concerns the terrain-description comprehension item.
+        Participants using kepler.gl, which renders no elevation surface, described the (in fact mountainous)
+        landscape correctly in only <strong>9.5%</strong> of cases &mdash; and every single incorrect answer
+        confidently selected "flat lowland," with none expressing uncertainty. Both terrain-based tools were
+        answered almost perfectly.
+      </p>
+      <div class="stat-row">
+        <div class="stat stat-negative">
+          <div class="stat-value">9.5%</div>
+          <div class="stat-label">Correct terrain description &mdash; kepler.gl (no rendered elevation)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">95.7% / 100%</div>
+          <div class="stat-label">Correct terrain description &mdash; Unity application / ArcGIS Online</div>
+        </div>
+      </div>
+      <p style="margin-top:0.8rem; font-size:0.9rem; color:#8b949e;">
+        Association between tool and accuracy: &chi;&sup2; = 54.68, df = 2, p &lt; 0.001.
+      </p>
+    </div>
+
+    <!-- Comprehension -->
+    <div class="section">
+      <h2>Comprehension</h2>
+      <p>
+        Scored on the first tool each participant encountered, the mean comprehension score (out of four) was
+        <strong>3.30 for the Unity application</strong>, 3.04 for the ArcGIS Online Experience Builder, and 2.43
+        for kepler.gl &mdash; a significant difference (Kruskal-Wallis H = 9.41, df = 2, p = 0.009), driven almost
+        entirely by the terrain item above.
       </p>
       <table class="area-grid">
         <thead>
           <tr>
-            <th>Study Area</th>
-            <th>Date Range (test)</th>
-            <th>Raw Detections</th>
-            <th>After Confidence Filter</th>
-            <th>Final Markers</th>
+            <th>Item</th>
+            <th>kepler.gl</th>
+            <th>ArcGIS Online</th>
+            <th>Unity application</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Paraguay (Gran Chaco)</td>
-            <td>01 Feb &ndash; 10 Mar 2026</td>
-            <td>13,279</td>
-            <td>~9,800</td>
-            <td>~3,200 (clustered)</td>
-          </tr>
-          <tr>
-            <td>Portugal</td>
-            <td>Summer season sample</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>TBD</td>
-          </tr>
-          <tr>
-            <td>Eastern Australia (NSW/QLD)</td>
-            <td>Black Summer 2019&#8211;20</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>TBD</td>
-          </tr>
-          <tr>
-            <td>Hawaii</td>
-            <td>Aug 2023 (Lahaina)</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>TBD</td>
-          </tr>
+          <tr><td>Number of days</td><td>85.7%</td><td>62.5%</td><td>60.9%</td></tr>
+          <tr><td>Detections on a stated date</td><td>61.9%</td><td>58.3%</td><td>82.6%</td></tr>
+          <tr><td>Day of greatest activity</td><td>85.7%</td><td>83.3%</td><td>91.3%</td></tr>
+          <tr><td>Terrain description</td><td>9.5%</td><td>100.0%</td><td>95.7%</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:0.6rem; font-size:0.85rem; color:#555;">
-        TBD values will be completed in the final thesis text. Paraguay figures are from the primary validation run documented in the methodology chapter.
+    </div>
+
+    <!-- Usability and rating -->
+    <div class="section">
+      <h2>Usability vs. Rating: Two Different Stories</h2>
+      <p>
+        Communicative effectiveness and interface usability separated cleanly. The Unity application was rated
+        <strong>as favorably as the commercial ArcGIS Online platform</strong> on the qualities the visualization
+        was designed to deliver (p = 0.692 on the overall rating measure), while scoring significantly
+        <strong>lower on adapted usability</strong> than that same platform (p = 0.023). It was not a weaker
+        communicator that participants tolerated &mdash; it was an equally effective communicator that
+        participants found harder to operate.
       </p>
+      <table class="area-grid">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>n</th>
+            <th>Adapted usability (0&ndash;100)</th>
+            <th>Mean rating (1&ndash;5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>kepler.gl</td><td>21</td><td>61.90</td><td>3.39</td></tr>
+          <tr><td>ArcGIS Online Experience Builder</td><td>24</td><td>74.38</td><td>4.08</td></tr>
+          <tr><td>Unity application</td><td>23</td><td>63.70</td><td>3.99</td></tr>
+        </tbody>
+      </table>
+      <h3>Per-Item Ratings (1&ndash;5 scale)</h3>
+      <table class="area-grid">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>kepler.gl</th>
+            <th>ArcGIS Online</th>
+            <th>Unity application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Location could be identified</td><td>4.14</td><td>4.38</td><td>4.22</td></tr>
+          <tr><td>Day-to-day change could be followed</td><td>3.90</td><td>4.33</td><td>4.17</td></tr>
+          <tr><td>Terrain provided spatial context</td><td>2.52</td><td>4.17</td><td><strong>4.30</strong></td></tr>
+          <tr><td>Detections distinguished from effects</td><td>3.43</td><td>3.96</td><td>3.78</td></tr>
+          <tr><td>Meaning of marker differences was clear</td><td>3.10</td><td>3.83</td><td>3.30</td></tr>
+          <tr><td>Attention was held throughout</td><td>3.24</td><td>3.83</td><td><strong>4.17</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.9rem; color:#8b949e; margin-top:0.6rem;">
+        The Unity application scored highest of the three tools on both terrain context and sustained attention
+        &mdash; its two strongest results &mdash; while the clarity of marker-intensity differences was its
+        lowest-rated property (not statistically significant, but the most frequent qualitative complaint; see
+        below).
+      </p>
+    </div>
+
+    <!-- Experience gradient -->
+    <div class="section">
+      <h2>The Usability Gap Is an Onboarding Problem</h2>
+      <p>
+        Pooling every participant's rating of every tool (not just the first seen) shows the Unity application's
+        adapted usability score rising steadily with prior experience, while the commercial platform stays flat:
+      </p>
+      <table class="area-grid">
+        <thead>
+          <tr>
+            <th>Prior 3D/game experience</th>
+            <th>n</th>
+            <th>kepler.gl</th>
+            <th>ArcGIS Online</th>
+            <th>Unity application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>None or rare</td><td>23</td><td>62.4</td><td>80.4</td><td>56.8</td></tr>
+          <tr><td>Occasional</td><td>26</td><td>59.8</td><td>76.1</td><td>61.7</td></tr>
+          <tr><td>Frequent</td><td>19</td><td>62.1</td><td>82.1</td><td>72.1</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Critically, the <em>rating</em> measures show no equivalent gradient &mdash; participants who struggled to
+        move through the 3D scene were still able to correctly read what it displayed. Open responses located the
+        friction precisely in navigation: 18 of 68 participants described the keyboard-driven camera as difficult
+        (far more than either comparator drew), several wanted the mouse-drag map interaction they expected, and
+        several lost their bearings before locating the fire &mdash; pointing to a fixable onboarding/interaction
+        design issue rather than a flaw in the visualization itself.
+      </p>
+    </div>
+
+    <!-- Qualitative themes -->
+    <div class="section">
+      <h2>What Participants Said</h2>
+      <ul class="feature-list">
+        <li><strong>Most praised (all tools):</strong> the day-by-day time-lapse (31 of 68 participants) and terrain representation (27 of 68) &mdash; five participants explicitly named the lack of elevation in kepler.gl as a shortcoming.</li>
+        <li><strong>Most criticized (Unity):</strong> camera/navigation difficulty (18 participants) &mdash; wanting conventional mouse drag-and-scroll, and needing to travel to locate the fire on entry.</li>
+        <li><strong>Requested improvement (Unity):</strong> a legend for what marker size/color actually encodes (8 participants) &mdash; the wind-arrow temperature legend already exists in both builds, but no equivalent legend explains fire radiative power / marker scaling.</li>
+        <li><strong>Technical issues:</strong> 7 of 68 participants reported browser-build problems (slower loading, needing a refresh, one crash) tied to the WebGL build's cross-origin-isolation requirements.</li>
+      </ul>
     </div>
 
     <!-- Implemented features -->
     <div class="section">
       <h2>Implemented System Components</h2>
-      <h3>Data Pipeline (Unity Editor)</h3>
+      <h3>Data Acquisition (Python)</h3>
       <ul class="feature-list">
-        <li>FIRMS Area API client with automatic 5-day chunking and deduplication</li>
-        <li>Shapefile writer (.shp / .dbf / .shx / .prj) for fire points and boundary polygons</li>
-        <li>CSV report with per-detection attributes (lat, lon, FRP, brightness, confidence, date)</li>
-        <li>Run summary log with total counts, centroid coordinates, and date range</li>
-        <li>Preset region library (Paraguay, Portugal, Australia, Hawaii) with centroid preview</li>
+        <li>Day-by-day MODIS Collection 6.1 queries over the Jasper bounding box, with retry + exponential backoff</li>
+        <li>CSV and point shapefile (EPSG:4326) export, plus a nominal-confidence-and-above (&ge;30%) filtered subset</li>
+        <li>Open-Meteo sampling on a 1&deg; grid (capped at 16 points/run) for daily temperature, wind and cloud cover</li>
       </ul>
-      <h3>Core Visualisation Engine</h3>
+      <h3>Core Visualisation Engine (Unity)</h3>
       <ul class="feature-list">
-        <li>WGS84 &#8594; ECEF &#8594; Unity world-space coordinate pipeline via Cesium for Unity</li>
-        <li>Terrain-readiness spawn gate with exponential back-off (up to 15 retries, 0.5&#8211;2 s)</li>
-        <li>Fire clustering: radius-based merge with sqrt(count) scale + tiny-fire merge stage</li>
-        <li>Burn scar projection with terrain vertex conformance and geographic distance merging</li>
-        <li>Day-by-day timeline with incremental coroutine construction and configurable playback speed</li>
-        <li>Confidence filtering with auto-fallback to unfiltered load if result would be empty</li>
+        <li>NetTopologySuite shapefile reader feeding the WGS84 &#8594; ECEF &#8594; Unity world-space coordinate pipeline via Cesium for Unity</li>
+        <li>Terrain-readiness spawn gate (75% raycast hit ratio over two stable passes; exponential backoff up to 15 attempts)</li>
+        <li>Radius/time-window fire clustering with FRP- and density-weighted marker scaling</li>
+        <li>Day-by-day Timeline playback with cross-fade transitions between days</li>
       </ul>
-      <h3>Weather and Environmental Overlays</h3>
+      <h3>Weather Overlays</h3>
       <ul class="feature-list">
-        <li>Temperature layer: JSON loader, blue&#8211;red colour ramp, optional location merging, TextMesh labels</li>
-        <li>Wind layer: directional arrow grid with configurable stride-based update for CPU savings</li>
-        <li>Cloud cover layer: disc markers with clear&#8211;overcast colour ramp, transparency support</li>
-        <li>All layers registered on the orthographic minimap; togglable independently at runtime</li>
+        <li>Wind-arrow grid over the terrain, oriented by direction, scaled by speed, coloured by temperature</li>
+        <li>Per-marker particle sway reflecting the nearest wind vector</li>
+        <li>Cloud-cover percentage readout in the timeline HUD</li>
       </ul>
-      <h3>Camera and Presentation Tools</h3>
+      <h3>Camera, UI and Deployment</h3>
       <ul class="feature-list">
-        <li>Fly-through path system: ECEF waypoints, configurable speed, CesiumOriginShift suspension during playback</li>
-        <li>Annotation system: per-waypoint-range text and image cards, draggable during recording, persisted screen position</li>
-        <li>MP4 and GIF export with configurable resolution, FPS, and GIF width</li>
-        <li>Camera-look gate: simulation advances only when viewport aims at active fire bounds</li>
-      </ul>
-      <h3>User Interface</h3>
-      <ul class="feature-list">
-        <li>Main menu with preset selection, date range entry, and performance preset toggle</li>
-        <li>Orthographic minimap with zoom, pan, and per-layer visibility controls</li>
-        <li>In-game pause settings panel: smoke, wind, connector fires, FPS counter, seconds-per-day, confidence threshold</li>
-        <li>FPS counter overlay persisted via PlayerPrefs</li>
-        <li>Runtime performance preset (Quality / Performance) affecting render scale, particle budgets, and LOD</li>
+        <li>Free-fly WASD/mouse camera (desktop) and a map-style drag-look camera with a "Go to Fire" button (WebGL)</li>
+        <li>Timeline bar, cloud/wind readouts, and hotkeys [1]&ndash;[4] for playback and overlay toggling</li>
+        <li>WebGL build served with COOP/COEP cross-origin-isolation headers for Cesium's multi-threading</li>
       </ul>
     </div>
 
     <!-- Limitations -->
     <div class="section">
-      <h2>Limitations and Future Work</h2>
+      <h2>Scope and Design Limitations</h2>
       <ul class="feature-list">
-        <li><strong>No urban / land-use mask</strong> &mdash; Industrial heat sources in city centres can produce false-positive detections. A future version should apply an urban footprint mask to filter out known non-wildfire hotspots.</li>
-        <li><strong>Single-ray terrain snapping</strong> &mdash; The current terrain height query uses a single vertical raycast. On steep volcanic terrain (Hawaii) or deep ravines, a multi-ray fan approach would improve surface adhesion.</li>
-        <li><strong>No fire spread simulation model</strong> &mdash; The platform animates historical detections chronologically but does not model or predict fire spread. Integration of a physics-based spread model (e.g., Rothermel) is planned as future work.</li>
-        <li><strong>Weather data resolution</strong> &mdash; Open-Meteo point-based weather data has coarser spatial resolution than the fire detections. Higher-resolution gridded weather products (e.g., ERA5 reanalysis) would improve overlay accuracy.</li>
-        <li><strong>Mobile and web deployment</strong> &mdash; The current build targets desktop Windows. A WebGL or mobile build would broaden accessibility for emergency management stakeholders.</li>
+        <li><strong>Descriptive, not predictive</strong> &mdash; The platform performs data-driven descriptive and visual modeling of satellite-derived fire observations; it reconstructs what MODIS has already recorded and does not forecast fire behaviour or model physical fire spread.</li>
+        <li><strong>Convenience sample</strong> &mdash; The study's 68 participants are not a probability sample of a defined population, so results are read as indicative tendencies rather than generalisable population estimates; three background subgroups contained fewer than 10 participants.</li>
+        <li><strong>Different scenario per tool</strong> &mdash; Each tool presented a different real wildfire event (necessary to prevent a learning effect across the three comprehension questions), so part of a comprehension difference could in principle reflect the event rather than the tool, though all three were matched on order-of-magnitude burned area and mountainous protected-area terrain.</li>
+        <li><strong>Tool equivalence</strong> &mdash; kepler.gl, the ArcGIS Online Experience Builder, and the Unity build differ in camera behaviour and interaction style independent of the data they present, so part of the usability gap may reflect general interface maturity rather than a property specific to wildfire visualization.</li>
+        <li><strong>Reduced browser build</strong> &mdash; Participants evaluated the WebGL deployment, not the full-featured desktop reference build (no burn scars/smoke, no minimap, no launch configuration), so the reported results are a lower bound on what the pipeline can communicate.</li>
+        <li><strong>Adapted usability scale</strong> &mdash; Four of the ten System Usability Scale items were reworded for a wildfire visualization (one also changed polarity), so the resulting score is not directly comparable to published SUS benchmarks.</li>
       </ul>
     </div>
 
@@ -203,11 +293,12 @@
 <footer class="site-footer">
   <div class="wrapper">
     <p>Data-Driven Wildfire Spread Modeling Using Earth Observation Data with Interactive 3D Visualization in Unity</p>
-    <p>Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
-    <p><a href="mailto:daniel.pavlacka@upol.cz">daniel.pavlacka@upol.cz</a> &mdash; <a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
+    <p>Master Thesis &mdash; Rigoto &mdash; Dept. of Geoinformatics, PLUS Salzburg &amp; UPOL Olomouc &mdash; 2026</p>
+    <p><a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
   </div>
 </footer>
 
+<script src="../assets/js/script.js"></script>
 <script>
   document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
   const observer = new IntersectionObserver(entries => {

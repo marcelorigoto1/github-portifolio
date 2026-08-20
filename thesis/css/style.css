@@ -1,6 +1,6 @@
 /* ==========================================================
    Wildfire Visualization Platform — Master Thesis Website
-   Author: Rigoto, 2025
+   Author: Rigoto, 2026
    ========================================================== */
 
 /* ---- Reset & Base ---- */
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   background: linear-gradient(135deg, #0d1117 0%, #111827 50%, #1a2332 100%);
   background-attachment: fixed;
   color: #e6edf3;
@@ -26,7 +26,7 @@ body {
 
 /* ---- Typography ---- */
 h1, h2, h3, h4, nav, .site-footer {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 h1 { font-size: 1.8rem; line-height: 1.25; }
@@ -44,98 +44,66 @@ a:hover { color: #5eead4; }
   padding: 0 1.2rem;
 }
 
-/* ---- Site Header ---- */
-.site-header {
-  background-color: #0d1117;
-  color: #e6edf3;
-  padding: 1.2rem 0;
+/* ---- Thesis Sub-nav ----
+   Sits directly under the site-wide .navbar (from base.css) so the top bar
+   itself is identical across every page on the site; this is just the
+   thesis section's own Overview/Methodology/Results/Downloads tabs. */
+.thesis-subnav {
+  background-color: #111827;
   border-bottom: 1px solid #30363d;
 }
 
-.site-header .wrapper {
-  display: table;
-  width: 100%;
+.thesis-subnav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  padding: 0.55rem 1.2rem;
 }
 
-.header-text {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.site-header h1 {
-  color: #e6edf3;
-  font-size: 1.35rem;
-  margin-bottom: 0.25rem;
-}
-
-.header-meta {
-  font-size: 0.85rem;
+.thesis-subnav-label {
+  font-size: 0.82rem;
   color: #8b949e;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
-.header-badge {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  padding-left: 1rem;
-  white-space: nowrap;
+.thesis-subnav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.thesis-subnav ul li a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  color: #e2e2e2;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.thesis-subnav ul li a:hover,
+.thesis-subnav ul li a.active {
+  background-color: rgba(45, 212, 191, 0.12);
+  color: #2dd4bf;
 }
 
 .badge-label {
   background-color: rgba(45, 212, 191, 0.12);
   color: #2dd4bf;
   border: 1px solid rgba(45, 212, 191, 0.3);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  padding: 0.25rem 0.65rem;
-  letter-spacing: 0.08em;
+  padding: 0.15rem 0.55rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 20px;
-}
-
-/* ---- Navigation ---- */
-.site-nav {
-  background-color: #0d1117;
-  border-bottom: 2px solid #2dd4bf;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-}
-
-.site-nav ul {
-  list-style: none;
-  display: table;
-  width: 100%;
-}
-
-.site-nav ul li {
-  display: table-cell;
-}
-
-.site-nav ul li a {
-  display: block;
-  text-align: center;
-  padding: 0.7rem 0.5rem;
-  color: #e2e2e2;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: bold;
-  letter-spacing: 0.04em;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.site-nav ul li a:hover,
-.site-nav ul li a.active {
-  background-color: rgba(45, 212, 191, 0.12);
-  color: #2dd4bf;
-}
-
-.site-nav ul li.back-link a {
-  color: #8b949e;
-  font-size: 0.82rem;
-}
-
-.site-nav ul li.back-link a:hover {
-  color: #2dd4bf;
-  background-color: transparent;
+  margin-left: 0.4rem;
 }
 
 /* ---- Hero / Intro Banner ---- */
@@ -161,6 +129,24 @@ a:hover { color: #5eead4; }
   font-size: 0.95rem;
 }
 
+.hero-cta {
+  display: inline-block;
+  background-color: #2dd4bf;
+  color: #0d1117;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.3rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-cta:hover {
+  background-color: #5eead4;
+  transform: translateY(-2px);
+}
+
 .hero-tags {
   margin-top: 1rem;
 }
@@ -173,7 +159,7 @@ a:hover { color: #5eead4; }
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
   margin: 0.15rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   border-radius: 4px;
 }
 
@@ -208,7 +194,7 @@ a:hover { color: #5eead4; }
   color: #0d1117;
   padding: 0.5rem 0.8rem;
   text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 .area-grid td {
@@ -270,7 +256,7 @@ a:hover { color: #5eead4; }
   top: 0.45rem;
   background-color: #2dd4bf;
   color: #0d1117;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 0.8rem;
   width: 1.5rem;
@@ -308,7 +294,7 @@ a:hover { color: #5eead4; }
   text-align: center;
   padding: 3.5rem 1rem;
   color: #8b949e;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
 }
 
@@ -344,7 +330,7 @@ a:hover { color: #5eead4; }
 }
 
 .download-grid .dl-title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 0.95rem;
   color: #2dd4bf;
@@ -363,7 +349,7 @@ a:hover { color: #5eead4; }
   color: #0d1117;
   padding: 0.4rem 1rem;
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
   font-weight: bold;
   border-radius: 5px;
@@ -373,6 +359,53 @@ a:hover { color: #5eead4; }
 .btn-download:hover {
   background-color: #5eead4;
   color: #0d1117;
+}
+
+/* ---- Stat Callout ---- */
+.stat-row {
+  display: table;
+  width: 100%;
+  border-spacing: 0.8rem 0;
+  margin-top: 0.8rem;
+}
+
+.stat {
+  display: table-cell;
+  width: 50%;
+  vertical-align: top;
+  background-color: #1a2332;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1.1rem 1.2rem;
+  text-align: center;
+}
+
+.stat .stat-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #2dd4bf;
+  line-height: 1.1;
+}
+
+.stat.stat-negative .stat-value {
+  color: #fbbf24;
+}
+
+.stat .stat-label {
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 700px) {
+  .stat-row {
+    display: block;
+  }
+  .stat {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
 }
 
 /* ---- Info Box ---- */
@@ -409,7 +442,7 @@ dl.meta {
 }
 
 dl.meta dt {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: #2dd4bf;
   margin-top: 0.5rem;
@@ -453,14 +486,9 @@ dl.meta dd {
 
 /* ---- Responsive ---- */
 @media (max-width: 700px) {
-  .site-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .site-nav ul li {
-    display: block;
-    flex: 1 1 auto;
+  .thesis-subnav .wrapper {
+    justify-content: center;
+    text-align: center;
   }
 
   .two-col .col {
@@ -482,7 +510,7 @@ dl.meta dd {
     width: 100%;
   }
 
-  .header-badge {
+  .thesis-subnav-label {
     display: none;
   }
 }

@@ -4,42 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Downloads — Data-Driven Wildfire Spread Modeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrapper">
-    <div class="header-text">
-      <h1>Data-Driven Wildfire Spread Modeling Using Earth Observation Data<br />with Interactive 3D Visualization in Unity</h1>
-      <p class="header-meta">Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank">
+            <img src="../assets/css/images/linkedin-icon.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/marcelorigoto1" target="_blank">
+            <img src="../assets/css/images/github.png" alt="GitHub">
+        </a>
     </div>
-    <div class="header-badge">
-      <span class="badge-label">Master Thesis</span>
+    <div class="navbar-title">E-Portfolio - Marcelo Alves Rigoto</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <div class="navbar-links">
+        <a href="../index.html">Home</a>
+        <a href="../about-me.html">About Me</a>
+        <a href="../all-projects.html">Projects</a>
+        <a href="../internship.html">Internship</a>
+        <a href="index.html">Thesis</a>
     </div>
-  </div>
-</header>
+</nav>
 
-<nav class="site-nav">
+<div class="thesis-subnav">
   <div class="wrapper">
+    <span class="thesis-subnav-label">Data-Driven Wildfire Spread Modeling <span class="badge-label">Master Thesis</span></span>
     <ul>
-      <li class="back-link"><a href="../index.html">&#8592; Portfolio</a></li>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Overview</a></li>
       <li><a href="methodology.html">Methodology</a></li>
       <li><a href="results.html">Results</a></li>
       <li><a href="downloads.html" class="active">Downloads</a></li>
     </ul>
   </div>
-</nav>
+</div>
 
 <main class="main-content">
   <div class="wrapper">
 
     <div class="section">
       <h2>Thesis Documents</h2>
-      <div class="info-box">
-        Final PDF documents will replace the placeholder files before thesis submission. All links are active; final versions will be identical file names.
-      </div>
       <table class="download-grid">
         <tbody>
           <tr>
@@ -47,8 +57,8 @@
               <div class="dl-icon">&#128196;</div>
               <div class="dl-title">Master Thesis (Full Text)</div>
               <div class="dl-desc">
-                Complete thesis text including all chapters, references, and assignments.
-                PDF format. Language: English.
+                Complete 86-page thesis: abstract, methodology, the 68-participant user study, results,
+                discussion, and appendices. PDF format. Language: English.
               </div>
               <a class="btn-download" href="docs/rigoto_thesis.pdf">Download PDF</a>
             </td>
@@ -56,30 +66,10 @@
               <div class="dl-icon">&#128247;</div>
               <div class="dl-title">Thesis Poster</div>
               <div class="dl-desc">
-                A2 format poster summarising the thesis objectives, methodology, and key results.
-                Suitable for conference or department display.
+                A2 format poster summarising the objectives, methodology, and key results (also reproduced
+                as Appendix B of the thesis text).
               </div>
               <a class="btn-download" href="docs/rigoto_poster.pdf">Download PDF</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="dl-icon">&#128203;</div>
-              <div class="dl-title">Appendix A &mdash; Pipeline Source Code</div>
-              <div class="dl-desc">
-                Annotated listing of the <code>WildfirePipelineManager</code> C# class and
-                Unity Editor window implementation.
-              </div>
-              <a class="btn-download" href="docs/rigoto_appendix_a.pdf">Download PDF</a>
-            </td>
-            <td>
-              <div class="dl-icon">&#128203;</div>
-              <div class="dl-title">Appendix B &mdash; Visualisation Scripts</div>
-              <div class="dl-desc">
-                Annotated listing of <code>WildfireOverlay</code>, <code>TemperatureLayer</code>,
-                <code>CloudLayer</code>, and fly-through system source code.
-              </div>
-              <a class="btn-download" href="docs/rigoto_appendix_b.pdf">Download PDF</a>
             </td>
           </tr>
         </tbody>
@@ -87,20 +77,50 @@
     </div>
 
     <div class="section">
-      <h2>Digital Medium</h2>
-      <p>
-        The complete digital medium (source code, exported shapefiles, sample data, and compiled application)
-        is attached to the submitted thesis as a physical storage medium per department requirements.
-        The contents of the digital medium mirror the folder structure described below.
-      </p>
-      <h3>Digital Medium Contents</h3>
-      <ul class="feature-list">
-        <li><strong>src/</strong> &mdash; Full Unity project source (Assets/, ProjectSettings/, Packages/)</li>
-        <li><strong>data/</strong> &mdash; Sample shapefiles and CSV exports for each of the four study areas</li>
-        <li><strong>docs/</strong> &mdash; Thesis PDF, poster PDF, and appendices</li>
-        <li><strong>build/</strong> &mdash; Compiled Windows standalone application</li>
-        <li><strong>web/</strong> &mdash; This website (rigoto25/)</li>
-      </ul>
+      <h2>Attachments</h2>
+      <p>As listed in the thesis's official attachments section:</p>
+      <table class="download-grid">
+        <tbody>
+          <tr>
+            <td>
+              <div class="dl-icon">&#128187;</div>
+              <div class="dl-title">Attachment 1 &mdash; Source Code Repository</div>
+              <div class="dl-desc">
+                Full Unity project source, the Python data-acquisition pipeline, and this website's source.
+              </div>
+              <a class="btn-download" href="https://github.com/marcelorigoto1/wildfire-visualization" target="_blank">View on GitHub</a>
+            </td>
+            <td>
+              <div class="dl-icon">&#128230;</div>
+              <div class="dl-title">Attachment 2 &mdash; Desktop Build (Windows)</div>
+              <div class="dl-desc">
+                Self-contained Windows executable, the full-fidelity reference implementation used to
+                produce the screenshots on this site.
+              </div>
+              <a class="btn-download" href="https://drive.google.com/file/d/1qgj2AZptZzWIgo7oWqSjmxBNU8DlRDjz/view" target="_blank">Download (Google Drive)</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dl-icon">&#127760;</div>
+              <div class="dl-title">Attachment 3 &mdash; Browser Deployment</div>
+              <div class="dl-desc">
+                The WebGL build of the Jasper 2024 reconstruction &mdash; no installation required, opens
+                directly in a browser.
+              </div>
+              <a class="btn-download" href="https://dashing-pudding-539172.netlify.app/" target="_blank">Launch in Browser</a>
+            </td>
+            <td>
+              <div class="dl-icon">&#128202;</div>
+              <div class="dl-title">Attachment 4 &mdash; Study Response Data</div>
+              <div class="dl-desc">
+                Raw questionnaire responses from all 68 participants of the comparative user evaluation.
+              </div>
+              <a class="btn-download" href="https://docs.google.com/spreadsheets/d/1hdP6mA_PqQosdb_e_qs4wc2l47dAdIfS/edit?usp=sharing" target="_blank">Open Spreadsheet</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="section">
@@ -120,10 +140,17 @@
         under their open data licence for non-commercial use.
       </p>
       <p>
-        Cesium for Unity is used under the Apache 2.0 licence.
-        ArcGIS Maps SDK for Unity is used under Esri&#8217;s developer licence.
-        Third-party Unity Asset Store packages used in this project are subject to the
-        Unity Asset Store End User Licence Agreement.
+        Cesium for Unity is used under the Apache 2.0 licence. NetTopologySuite and
+        NetTopologySuite.IO.ShapeFile, installed via NuGet for Unity, are used under their respective
+        open-source licences.
+      </p>
+      <p>
+        The pipeline requires no paid license and avoids proprietary GIS platforms, but is not composed
+        exclusively of open-source parts: the fire and smoke particle effects are third-party assets under
+        licences that do not permit redistribution, and Cesium ion's terrain/imagery streaming is used under
+        a free tier that excludes commercial use. A practitioner can rebuild the pipeline at no cost, but a
+        working build cannot be produced from the source repository alone without separately acquiring those
+        assets.
       </p>
     </div>
 
@@ -133,11 +160,12 @@
 <footer class="site-footer">
   <div class="wrapper">
     <p>Data-Driven Wildfire Spread Modeling Using Earth Observation Data with Interactive 3D Visualization in Unity</p>
-    <p>Master Thesis &mdash; Rigoto &mdash; Department of Geoinformatics, Palack&#253; University Olomouc &mdash; 2025</p>
-    <p><a href="mailto:daniel.pavlacka@upol.cz">daniel.pavlacka@upol.cz</a> &mdash; <a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
+    <p>Master Thesis &mdash; Rigoto &mdash; Dept. of Geoinformatics, PLUS Salzburg &amp; UPOL Olomouc &mdash; 2026</p>
+    <p><a href="https://www.geoinformatics.upol.cz">www.geoinformatics.upol.cz</a></p>
   </div>
 </footer>
 
+<script src="../assets/js/script.js"></script>
 <script>
   document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
   const observer = new IntersectionObserver(entries => {

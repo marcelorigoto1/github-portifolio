@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcelo Alves Rigoto — E-Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -31,10 +35,10 @@
 
     <!-- Main Section -->
     <section id="about-me-intro">
+        <div class="about-visual" aria-hidden="true">
+            <div id="globe-canvas"></div>
+        </div>
         <div class="about-me-container">
-            <div class="about-image">
-                <img src="assets/css/images/me.jpg" alt="Profile Picture">
-            </div>
             <div class="about-summary">
                 <h1>Hello There!</h1>
                 <p>
@@ -43,14 +47,16 @@
                 </p>
                 <p>
                     I am now at Palack&#253; University Olomouc (UPOL), specializing in GeoVisualization
-                    &mdash; deepening my expertise in cartographic design, visual analytics, and spatial storytelling.
+                    deepening my expertise in cartographic design, visual analytics, and spatial storytelling.
                     My first year was spent at Paris Lodron University of Salzburg, building a broad foundation
                     across GIS, remote sensing, and geospatial technologies.
                 </p>
                 <p>
-                    My professional background includes work as a GIS Technician at Imagem Geosistemas, where I developed
-                    automated workflows, dashboards, and web maps using Python and ArcGIS Online. At IBGE and Instituto Municipal
-                    Pereira Passos, I contributed to spatial analysis and urban geospatial projects using ArcGIS Pro and QGIS.
+                    I have over five years of hands-on GIS experience across land administration, municipal, and remote-sensing
+                    projects in Brazil &mdash; including several years as a GIS Technician at Imagem Geosistemas, developing
+                    automated workflows, dashboards, and web maps with Python and ArcGIS Online &mdash; plus topography and
+                    land-survey fieldwork with drones, TLS, and photogrammetry in Portugal, and 3D geovisualization work with
+                    Cesium and Unity3D.
                 </p>
                 <a href="about-me.html" class="cta-button">MORE ABOUT ME</a>
                 <a href="all-projects.html" class="cta-button">PROJECTS</a>
@@ -62,12 +68,14 @@
     <footer class="footer">
         <div class="footer-logos">
             <p>Contact: marcelorigoto1@gmail.com</p>
-            <img src="assets/css/images/EN Co-funded by the EU_POS.jpg" alt="European Union">
-            <img src="assets/css/images/PLUS Logo englisch Farbe.jpg" alt="Paris Lodron University Salzburg">
+            <img src="assets/css/images/EN_Co-funded_by_the_EU_POS-removebg-preview.png" alt="European Union">
+            <img src="assets/css/images/PLUS_Logo_englisch_Farbe-removebg-preview.png" alt="Paris Lodron University Salzburg">
             <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palacký University Olomouc">
         </div>
     </footer>
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+    <script src="assets/js/globe.js"></script>
 </body>
 
 </html>

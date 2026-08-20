@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - E-Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/projects.css">
 </head>
 
@@ -32,7 +36,7 @@
     <!-- Page Hero -->
     <div class="projects-hero">
         <h1>Projects</h1>
-        <p>A collection of geospatial work spanning web maps, dashboards, storymaps, and academic activities.</p>
+        <p>A collection of geospatial work spanning web maps, dashboards, storymaps, cartography, remote sensing, 3D visualization, and software.</p>
     </div>
 
     <!-- Filter Bar -->
@@ -41,6 +45,10 @@
         <button class="filter-btn" data-filter="webmaps">🗺 WebMaps</button>
         <button class="filter-btn" data-filter="dashboards">📊 Dashboards</button>
         <button class="filter-btn" data-filter="storymaps">📖 Storymaps</button>
+        <button class="filter-btn" data-filter="cartography">🗺️ Cartography</button>
+        <button class="filter-btn" data-filter="remote-sensing">🛰️ Remote Sensing</button>
+        <button class="filter-btn" data-filter="3d">🌐 3D</button>
+        <button class="filter-btn" data-filter="software">💻 Software</button>
         <button class="filter-btn" data-filter="certificates">🏅 Certificates</button>
     </div>
 
@@ -117,6 +125,204 @@
             </div>
         </div>
 
+        <!-- Cartography Section -->
+        <div class="project-category fade-in" data-category="cartography" id="cartography">
+            <h2><span class="cat-icon">🗺️</span> Cartography</h2>
+            <div class="project-grid">
+                <a href="assets/pdfs/cartography/transport-network-czechia-v2.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-transport-network-czechia-v2.jpg" alt="Transport Network of Czechia">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Transport Network of Czechia</h3>
+                        <p>Reference map of Czechia's road, rail, and airport network, redesigned with a refined color palette and simplified legend for the Thematic Cartography course.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/migration-in-czechia.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-migration-in-czechia.jpg" alt="Migration in Czechia">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Migration in Czechia</h3>
+                        <p>Choropleth map of net migration rate by district, paired with a donut chart breaking down immigration versus emigration.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/inhabitants-of-czechia.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-inhabitants-of-czechia.jpg" alt="Inhabitants of Czechia">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Inhabitants of Czechia</h3>
+                        <p>Graduated symbol map of population by region, split by age group (0-14, 15-64, 65+) using nested proportional bar symbols.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/rio-population-density.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-rio-population-density.jpg" alt="Households and Population in Rio de Janeiro">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Households &amp; Population in Rio</h3>
+                        <p>Dot density map of households by administrative region in Rio de Janeiro, built from 2022 IBGE Census data.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/south-america-population.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-south-america-population.jpg" alt="South America Population by Country">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>South America Population</h3>
+                        <p>Choropleth map of population by country across South America, with an inset detailing the smaller Guyana/Suriname territories.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/balkans-tourism-infrastructure.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-balkans-tourism-infrastructure.jpg" alt="Tourist Potential in the Balkans">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tourist Potential in the Balkans</h3>
+                        <p>Bivariate hexbin map cross-referencing rates of tourist attractions against infrastructure availability across the Balkan Peninsula.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/cyprus-tourist-accommodations.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-cyprus-tourist-accommodations.jpg" alt="Tourist Accommodations in Cyprus">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tourist Accommodations in Cyprus</h3>
+                        <p>Bivariate hexbin map comparing rates of shared versus private tourist accommodations across Cyprus, built from OpenStreetMap data.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/brazil-map-projections.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-brazil-map-projections.jpg" alt="Map projections and datums of Brazil">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Map Projections &amp; Datums of Brazil</h3>
+                        <p>Analysis of Brazil's transition from the local SAD69 datum to the geocentric SIRGAS2000 system, illustrated with geodetic distortion and station-displacement maps.</p>
+                    </div>
+                </a>
+                <a href="assets/css/images/cartography/historical-map-czechia-full.jpg" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-historical-map-czechia.jpg" alt="Historical Map of Czechia">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Historical Map of Czechia</h3>
+                        <p>A vintage-styled cartographic exercise rendering Czechia's terrain and settlements in an antique parchment aesthetic.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/cartography/emotional-map-ostrava.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-emotional-map-ostrava.jpg" alt="Emotional Map of Ostrava">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Emotional Map of Ostrava</h3>
+                        <p>Perception-mapping exercise visualizing how emotional responses to the city of Ostrava shifted between 2016 and 2023.</p>
+                    </div>
+                </a>
+                <a href="assets/css/images/cartography/sport-journey-poster-full.jpg" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-sport-journey-poster.jpg" alt="My Sport Journey in Europe poster">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>My Sport Journey in Europe</h3>
+                        <p>Final GeoVisualization course poster mapping a year of biking, running, and bouldering across Salzburg and Olomouc, built from personal Strava GPS data.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Remote Sensing Section -->
+        <div class="project-category fade-in" data-category="remote-sensing" id="remote-sensing">
+            <h2><span class="cat-icon">🛰️</span> Remote Sensing</h2>
+            <div class="project-grid">
+                <a href="assets/pdfs/remote-sensing/supervised-classification-part1.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-supervised-classification-part1.jpg" alt="Supervised Classification Part 1">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Supervised Classification &mdash; Part 1</h3>
+                        <p>Object-based image classification exercise for Advanced Remote Sensing: rule set definition and training sample selection in eCognition.</p>
+                    </div>
+                </a>
+                <a href="assets/pdfs/remote-sensing/supervised-classification-part2.pdf" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="assets/css/images/cartography/thumb-supervised-classification-part2.jpg" alt="Supervised Classification Part 2">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Supervised Classification &mdash; Part 2</h3>
+                        <p>Continuation of the object-based classification exercise, applying the workflow to further imagery examples and reviewing accuracy.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3D Section -->
+        <div class="project-category fade-in" data-category="3d" id="3d">
+            <h2><span class="cat-icon">🌐</span> 3D</h2>
+            <div class="project-grid">
+                <a href="https://marcelorigoto1.github.io/prague-transit-3d/" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/prague-transit-3d" alt="Prague Transit 3D">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Prague Transit 3D</h3>
+                        <p>Live 3D map of Prague's trams, metro, buses, and trains on a photorealistic city model, built with CesiumJS and the Golemio/PID real-time transit API.</p>
+                    </div>
+                </a>
+                <a href="https://dashing-pudding-539172.netlify.app/" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/wildfire-visualization" alt="Wildfire 3D Visualization">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Wildfire 3D Visualization</h3>
+                        <p>Live WebGL demo from my master thesis &mdash; a day-by-day 3D reconstruction of the 2024 Jasper wildfire in Unity and Cesium, driven by NASA FIRMS satellite data.</p>
+                    </div>
+                </a>
+                <a href="https://geomatupen.github.io/mein-salzburg/" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="https://opengraph.githubassets.com/1/geomatupen/mein-salzburg" alt="MeinSalzburg">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>MeinSalzburg</h3>
+                        <p>Team project for the WebGIS course &mdash; a 3D Leaflet/Mapbox urban toolkit for Salzburg with proximity search, walkability/bikeability analysis, and multi-stop route planning across city amenities.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Software Section -->
+        <div class="project-category fade-in" data-category="software" id="software">
+            <h2><span class="cat-icon">💻</span> Software</h2>
+            <div class="project-grid">
+                <a href="https://github.com/marcelorigoto1/Falatorio" target="_blank" class="project-card">
+                    <div class="card-img-wrap">
+                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/Falatorio" alt="Falatorio">
+                        <div class="card-overlay"><span>View &#8594;</span></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Falatorio</h3>
+                        <p>Self-hosted voice, text, and screen-sharing app built with Node.js and WebRTC &mdash; a privacy-first "homemade Discord" with no accounts, ads, or third-party servers.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <!-- Certificates Section -->
         <div class="project-category fade-in" data-category="certificates" id="certificates">
             <h2><span class="cat-icon">🏅</span> Certificates</h2>
@@ -149,8 +355,8 @@
     <footer class="footer">
         <div class="footer-logos">
             <p>Contact: marcelorigoto1@gmail.com</p>
-            <img src="assets/css/images/EN Co-funded by the EU_POS.jpg" alt="European Union">
-            <img src="assets/css/images/PLUS Logo englisch Farbe.jpg" alt="Paris Lodron University Salzburg">
+            <img src="assets/css/images/EN_Co-funded_by_the_EU_POS-removebg-preview.png" alt="European Union">
+            <img src="assets/css/images/PLUS_Logo_englisch_Farbe-removebg-preview.png" alt="Paris Lodron University Salzburg">
             <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palacký University Olomouc">
         </div>
     </footer>
