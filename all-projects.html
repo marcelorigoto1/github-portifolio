@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - E-Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Geospatial projects by Marcelo Alves Rigoto: web maps, dashboards, storymaps, thematic cartography, remote sensing, 3D visualization and software.">
+    <meta name="author" content="Marcelo Alves Rigoto">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Marcelo Alves Rigoto — E-Portfolio">
+    <meta property="og:title" content="Projects — Marcelo Alves Rigoto">
+    <meta property="og:description" content="Geospatial projects by Marcelo Alves Rigoto: web maps, dashboards, storymaps, thematic cartography, remote sensing, 3D visualization and software.">
+    <meta property="og:url" content="https://marcelorigoto1.github.io/github-portifolio/all-projects.html">
+    <meta property="og:image" content="https://marcelorigoto1.github.io/github-portifolio/thesis/img/browser-build-jasper.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://marcelorigoto1.github.io/github-portifolio/all-projects.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script id="theme-init">(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)})();</script>
+    <title>Projects — Marcelo Alves Rigoto</title>
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/projects.css">
 </head>
@@ -16,20 +26,27 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank">
-                <img src="assets/css/images/linkedin-icon.png" alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/marcelorigoto/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
             </a>
-            <a href="https://github.com/marcelorigoto1" target="_blank">
-                <img src="assets/css/images/github.png" alt="GitHub">
+            <a href="https://github.com/marcelorigoto1" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>
             </a>
         </div>
-        <div class="navbar-title">E-Portfolio - Marcelo Alves Rigoto</div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <a class="navbar-title" href="index.html"><span class="navbar-title-prefix">E-Portfolio - </span>Marcelo Alves Rigoto</a>
         <div class="navbar-links">
             <a href="index.html">Home</a>
+            <a href="all-projects.html" class="active" aria-current="page">Projects</a>
             <a href="about-me.html">About Me</a>
             <a href="internship.html">Internship</a>
             <a href="thesis/index.html">Thesis</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+            </button>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
         </div>
     </nav>
 
@@ -41,15 +58,15 @@
 
     <!-- Filter Bar -->
     <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="webmaps">🗺 WebMaps</button>
-        <button class="filter-btn" data-filter="dashboards">📊 Dashboards</button>
-        <button class="filter-btn" data-filter="storymaps">📖 Storymaps</button>
-        <button class="filter-btn" data-filter="cartography">🗺️ Cartography</button>
-        <button class="filter-btn" data-filter="remote-sensing">🛰️ Remote Sensing</button>
-        <button class="filter-btn" data-filter="3d">🌐 3D</button>
-        <button class="filter-btn" data-filter="software">💻 Software</button>
-        <button class="filter-btn" data-filter="certificates">🏅 Certificates</button>
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="webmaps" aria-pressed="false"><span aria-hidden="true">🗺</span> WebMaps</button>
+        <button class="filter-btn" data-filter="dashboards" aria-pressed="false"><span aria-hidden="true">📊</span> Dashboards</button>
+        <button class="filter-btn" data-filter="storymaps" aria-pressed="false"><span aria-hidden="true">📖</span> Storymaps</button>
+        <button class="filter-btn" data-filter="cartography" aria-pressed="false"><span aria-hidden="true">🗺️</span> Cartography</button>
+        <button class="filter-btn" data-filter="remote-sensing" aria-pressed="false"><span aria-hidden="true">🛰️</span> Remote Sensing</button>
+        <button class="filter-btn" data-filter="3d" aria-pressed="false"><span aria-hidden="true">🌐</span> 3D</button>
+        <button class="filter-btn" data-filter="software" aria-pressed="false"><span aria-hidden="true">💻</span> Software</button>
+        <button class="filter-btn" data-filter="certificates" aria-pressed="false"><span aria-hidden="true">🏅</span> Certificates</button>
     </div>
 
     <!-- Projects Section -->
@@ -57,11 +74,11 @@
 
         <!-- WebMaps -->
                 <div class="project-category fade-in" data-category="webmaps" id="webmaps">
-                    <h2><span class="cat-icon">🗺</span> WebMaps</h2>
+                    <h2><span class="cat-icon" aria-hidden="true">🗺</span> WebMaps</h2>
                     <div class="project-grid">
-                        <a href="https://zgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=cb1b1aa81fa64804a01501d5381f9f64" target="_blank" class="project-card">
+                        <a href="https://zgis.maps.arcgis.com/apps/mapviewer/index.html?webmap=cb1b1aa81fa64804a01501d5381f9f64" target="_blank" rel="noopener" class="project-card">
                             <div class="card-img-wrap">
-                                <img src="assets\css\images\parksyoung.png" alt="Park for Young People Salzburg">
+                                <img src="assets/css/images/parksyoung.jpg" alt="Park for Young People Salzburg" loading="lazy">
                                 <div class="card-overlay"><span>View &#8594;</span></div>
                             </div>
                             <div class="project-content">
@@ -69,9 +86,9 @@
                                 <p>WebMap used for an application in ESRI Instant Apps.</p>
                             </div>
                         </a>
-                        <a href="https://marcelorigoto1.github.io/BikeClub/" target="_blank" class="project-card">
+                        <a href="https://marcelorigoto1.github.io/BikeClub/" target="_blank" rel="noopener" class="project-card">
                             <div class="card-img-wrap">
-                                <img src="assets\css\images\bikeclub.png" alt="Bike Club - Salzburg">
+                                <img src="assets/css/images/bikeclub.jpg" alt="Bike Club - Salzburg" loading="lazy">
                                 <div class="card-overlay"><span>View &#8594;</span></div>
                             </div>
                             <div class="project-content">
@@ -83,11 +100,11 @@
                 </div>
         <!-- Dashboards Section -->
         <div class="project-category fade-in" data-category="dashboards" id="dashboards">
-            <h2><span class="cat-icon">📊</span> Dashboards</h2>
+            <h2><span class="cat-icon" aria-hidden="true">📊</span> Dashboards</h2>
             <div class="project-grid">
-                <a href="https://zgis.maps.arcgis.com/home/item.html?id=df743dadd83f41589145739f4d5639b8" target="_blank" class="project-card">
+                <a href="https://zgis.maps.arcgis.com/home/item.html?id=df743dadd83f41589145739f4d5639b8" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets\css\images\dashboard_saude.png" alt="Los Angeles Health Care Facilities">
+                        <img src="assets/css/images/dashboard_saude.jpg" alt="Los Angeles Health Care Facilities" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -100,11 +117,11 @@
 
         <!-- Storymaps Section -->
         <div class="project-category fade-in" data-category="storymaps" id="storymaps">
-            <h2><span class="cat-icon">📖</span> Storymaps</h2>
+            <h2><span class="cat-icon" aria-hidden="true">📖</span> Storymaps</h2>
             <div class="project-grid">
-                <a href="https://storymaps.arcgis.com/stories/292e899cab144c149722cf794ed6b958" target="_blank" class="project-card">
+                <a href="https://storymaps.arcgis.com/stories/292e899cab144c149722cf794ed6b958" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets\css\images\spatial_analysis.png" alt="Spatial Analysis Lab">
+                        <img src="assets/css/images/spatial_analysis.jpg" alt="Spatial Analysis Lab" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -112,9 +129,9 @@
                         <p>Storymap containing the exercise using ESRI Spatial Analysis tools.</p>
                     </div>
                 </a>
-                <a href="https://storymaps.arcgis.com/stories/9ab52cc94e81489a8c77e879e72344cd" target="_blank" class="project-card">
+                <a href="https://storymaps.arcgis.com/stories/9ab52cc94e81489a8c77e879e72344cd" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets\css\images\3d_visualization.png" alt="Salzburg 3D Map">
+                        <img src="assets/css/images/3d_visualization.jpg" alt="Salzburg 3D Map" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -127,11 +144,11 @@
 
         <!-- Cartography Section -->
         <div class="project-category fade-in" data-category="cartography" id="cartography">
-            <h2><span class="cat-icon">🗺️</span> Cartography</h2>
+            <h2><span class="cat-icon" aria-hidden="true">🗺️</span> Cartography</h2>
             <div class="project-grid">
-                <a href="assets/pdfs/cartography/transport-network-czechia-v2.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/transport-network-czechia-v2.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-transport-network-czechia-v2.jpg" alt="Transport Network of Czechia">
+                        <img src="assets/css/images/cartography/thumb-transport-network-czechia-v2.jpg" alt="Transport Network of Czechia" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -139,9 +156,9 @@
                         <p>Reference map of Czechia's road, rail, and airport network, redesigned with a refined color palette and simplified legend for the Thematic Cartography course.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/migration-in-czechia.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/migration-in-czechia.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-migration-in-czechia.jpg" alt="Migration in Czechia">
+                        <img src="assets/css/images/cartography/thumb-migration-in-czechia.jpg" alt="Migration in Czechia" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -149,9 +166,9 @@
                         <p>Choropleth map of net migration rate by district, paired with a donut chart breaking down immigration versus emigration.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/inhabitants-of-czechia.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/inhabitants-of-czechia.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-inhabitants-of-czechia.jpg" alt="Inhabitants of Czechia">
+                        <img src="assets/css/images/cartography/thumb-inhabitants-of-czechia.jpg" alt="Inhabitants of Czechia" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -159,9 +176,9 @@
                         <p>Graduated symbol map of population by region, split by age group (0-14, 15-64, 65+) using nested proportional bar symbols.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/rio-population-density.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/rio-population-density.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-rio-population-density.jpg" alt="Households and Population in Rio de Janeiro">
+                        <img src="assets/css/images/cartography/thumb-rio-population-density.jpg" alt="Households and Population in Rio de Janeiro" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -169,9 +186,9 @@
                         <p>Dot density map of households by administrative region in Rio de Janeiro, built from 2022 IBGE Census data.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/south-america-population.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/south-america-population.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-south-america-population.jpg" alt="South America Population by Country">
+                        <img src="assets/css/images/cartography/thumb-south-america-population.jpg" alt="South America Population by Country" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -179,9 +196,9 @@
                         <p>Choropleth map of population by country across South America, with an inset detailing the smaller Guyana/Suriname territories.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/balkans-tourism-infrastructure.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/balkans-tourism-infrastructure.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-balkans-tourism-infrastructure.jpg" alt="Tourist Potential in the Balkans">
+                        <img src="assets/css/images/cartography/thumb-balkans-tourism-infrastructure.jpg" alt="Tourist Potential in the Balkans" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -189,9 +206,9 @@
                         <p>Bivariate hexbin map cross-referencing rates of tourist attractions against infrastructure availability across the Balkan Peninsula.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/cyprus-tourist-accommodations.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/cyprus-tourist-accommodations.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-cyprus-tourist-accommodations.jpg" alt="Tourist Accommodations in Cyprus">
+                        <img src="assets/css/images/cartography/thumb-cyprus-tourist-accommodations.jpg" alt="Tourist Accommodations in Cyprus" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -199,9 +216,9 @@
                         <p>Bivariate hexbin map comparing rates of shared versus private tourist accommodations across Cyprus, built from OpenStreetMap data.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/brazil-map-projections.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/brazil-map-projections.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-brazil-map-projections.jpg" alt="Map projections and datums of Brazil">
+                        <img src="assets/css/images/cartography/thumb-brazil-map-projections.jpg" alt="Map projections and datums of Brazil" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -209,9 +226,9 @@
                         <p>Analysis of Brazil's transition from the local SAD69 datum to the geocentric SIRGAS2000 system, illustrated with geodetic distortion and station-displacement maps.</p>
                     </div>
                 </a>
-                <a href="assets/css/images/cartography/historical-map-czechia-full.jpg" target="_blank" class="project-card">
+                <a href="assets/css/images/cartography/historical-map-czechia-full.jpg" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-historical-map-czechia.jpg" alt="Historical Map of Czechia">
+                        <img src="assets/css/images/cartography/thumb-historical-map-czechia.jpg" alt="Historical Map of Czechia" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -219,9 +236,9 @@
                         <p>A vintage-styled cartographic exercise rendering Czechia's terrain and settlements in an antique parchment aesthetic.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/cartography/emotional-map-ostrava.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/cartography/emotional-map-ostrava.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-emotional-map-ostrava.jpg" alt="Emotional Map of Ostrava">
+                        <img src="assets/css/images/cartography/thumb-emotional-map-ostrava.jpg" alt="Emotional Map of Ostrava" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -229,9 +246,9 @@
                         <p>Perception-mapping exercise visualizing how emotional responses to the city of Ostrava shifted between 2016 and 2023.</p>
                     </div>
                 </a>
-                <a href="assets/css/images/cartography/sport-journey-poster-full.jpg" target="_blank" class="project-card">
+                <a href="assets/css/images/cartography/sport-journey-poster-full.jpg" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-sport-journey-poster.jpg" alt="My Sport Journey in Europe poster">
+                        <img src="assets/css/images/cartography/thumb-sport-journey-poster.jpg" alt="My Sport Journey in Europe poster" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -244,11 +261,11 @@
 
         <!-- Remote Sensing Section -->
         <div class="project-category fade-in" data-category="remote-sensing" id="remote-sensing">
-            <h2><span class="cat-icon">🛰️</span> Remote Sensing</h2>
+            <h2><span class="cat-icon" aria-hidden="true">🛰️</span> Remote Sensing</h2>
             <div class="project-grid">
-                <a href="assets/pdfs/remote-sensing/supervised-classification-part1.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/remote-sensing/supervised-classification-part1.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-supervised-classification-part1.jpg" alt="Supervised Classification Part 1">
+                        <img src="assets/css/images/cartography/thumb-supervised-classification-part1.jpg" alt="Supervised Classification Part 1" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -256,9 +273,9 @@
                         <p>Object-based image classification exercise for Advanced Remote Sensing: rule set definition and training sample selection in eCognition.</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/remote-sensing/supervised-classification-part2.pdf" target="_blank" class="project-card">
+                <a href="assets/pdfs/remote-sensing/supervised-classification-part2.pdf" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets/css/images/cartography/thumb-supervised-classification-part2.jpg" alt="Supervised Classification Part 2">
+                        <img src="assets/css/images/cartography/thumb-supervised-classification-part2.jpg" alt="Supervised Classification Part 2" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -271,11 +288,11 @@
 
         <!-- 3D Section -->
         <div class="project-category fade-in" data-category="3d" id="3d">
-            <h2><span class="cat-icon">🌐</span> 3D</h2>
+            <h2><span class="cat-icon" aria-hidden="true">🌐</span> 3D</h2>
             <div class="project-grid">
-                <a href="https://marcelorigoto1.github.io/prague-transit-3d/" target="_blank" class="project-card">
+                <a href="https://marcelorigoto1.github.io/prague-transit-3d/" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/prague-transit-3d" alt="Prague Transit 3D">
+                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/prague-transit-3d" alt="Prague Transit 3D" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -283,9 +300,9 @@
                         <p>Live 3D map of Prague's trams, metro, buses, and trains on a photorealistic city model, built with CesiumJS and the Golemio/PID real-time transit API.</p>
                     </div>
                 </a>
-                <a href="https://dashing-pudding-539172.netlify.app/" target="_blank" class="project-card">
+                <a href="https://dashing-pudding-539172.netlify.app/" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/wildfire-visualization" alt="Wildfire 3D Visualization">
+                        <img src="thesis/img/browser-build-jasper.jpg" alt="Wildfire 3D Visualization" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -293,9 +310,9 @@
                         <p>Live WebGL demo from my master thesis &mdash; a day-by-day 3D reconstruction of the 2024 Jasper wildfire in Unity and Cesium, driven by NASA FIRMS satellite data.</p>
                     </div>
                 </a>
-                <a href="https://geomatupen.github.io/mein-salzburg/" target="_blank" class="project-card">
+                <a href="https://geomatupen.github.io/mein-salzburg/" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="https://opengraph.githubassets.com/1/geomatupen/mein-salzburg" alt="MeinSalzburg">
+                        <img src="https://opengraph.githubassets.com/1/geomatupen/mein-salzburg" alt="MeinSalzburg" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -308,11 +325,11 @@
 
         <!-- Software Section -->
         <div class="project-category fade-in" data-category="software" id="software">
-            <h2><span class="cat-icon">💻</span> Software</h2>
+            <h2><span class="cat-icon" aria-hidden="true">💻</span> Software</h2>
             <div class="project-grid">
-                <a href="https://github.com/marcelorigoto1/Falatorio" target="_blank" class="project-card">
+                <a href="https://github.com/marcelorigoto1/Falatorio" target="_blank" rel="noopener" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/Falatorio" alt="Falatorio">
+                        <img src="https://opengraph.githubassets.com/1/marcelorigoto1/Falatorio" alt="Falatorio" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -325,11 +342,11 @@
 
         <!-- Certificates Section -->
         <div class="project-category fade-in" data-category="certificates" id="certificates">
-            <h2><span class="cat-icon">🏅</span> Certificates</h2>
+            <h2><span class="cat-icon" aria-hidden="true">🏅</span> Certificates</h2>
             <div class="project-grid">
-                <a href="issonvis.html" target="_blank" class="project-card">
+                <a href="issonvis.html" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets\css\images\issonvis.png" alt="ISSonVIS 2025">
+                        <img src="assets/css/images/issonvis.jpg" alt="ISSonVIS 2025" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
@@ -337,14 +354,14 @@
                         <p>Exploring visual ethics and trust in cartography at ISSonVIS 2025, Palacký University.</p>
                     </div>
                 </a>
-                <a href="bip.html" target="_blank" class="project-card">
+                <a href="bip.html" class="project-card">
                     <div class="card-img-wrap">
-                        <img src="assets\css\images\bip.png" alt="BIP 2025">
+                        <img src="assets/css/images/bip.jpg" alt="BIP 2025" loading="lazy">
                         <div class="card-overlay"><span>View &#8594;</span></div>
                     </div>
                     <div class="project-content">
                         <h3>BIP 2025</h3>
-                        <p>Blended Intensive Program hosted by Romenia University.</p>
+                        <p>Blended Intensive Program hosted by the University of Bucharest, Romania.</p>
                     </div>
                 </a>
             </div>
@@ -354,11 +371,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-logos">
-            <p>Contact: marcelorigoto1@gmail.com</p>
-            <img src="assets/css/images/EN_Co-funded_by_the_EU_POS-removebg-preview.png" alt="European Union">
-            <img src="assets/css/images/PLUS_Logo_englisch_Farbe-removebg-preview.png" alt="Paris Lodron University Salzburg">
-            <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palacký University Olomouc">
+            <p>Contact: <a href="mailto:marcelorigoto1@gmail.com">marcelorigoto1@gmail.com</a></p>
+            <img src="assets/css/images/EN_Co-funded_by_the_EU_POS-removebg-preview.png" alt="Co-funded by the European Union" loading="lazy">
+            <img src="assets/css/images/PLUS_Logo_englisch_Farbe-removebg-preview.png" alt="Paris Lodron University of Salzburg" loading="lazy">
+            <img src="assets/css/images/UP_logo_horizont_en.png" alt="Palacký University Olomouc" loading="lazy">
         </div>
+        <p class="footer-copy">&copy; 2026 Marcelo Alves Rigoto</p>
     </footer>
     <script src="assets/js/script.js"></script>
     <script>
@@ -374,8 +392,12 @@
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
                 btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
                 const filter = btn.dataset.filter;
                 categories.forEach(cat => {
                     if (filter === 'all' || cat.dataset.category === filter) {

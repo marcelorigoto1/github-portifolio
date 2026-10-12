@@ -16,26 +16,26 @@ html {
 }
 
 body {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #0d1117 0%, #111827 50%, #1a2332 100%);
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
+  background: var(--bg-gradient);
   background-attachment: fixed;
-  color: #e6edf3;
+  color: var(--text);
   line-height: 1.7;
   min-height: 100vh;
 }
 
 /* ---- Typography ---- */
 h1, h2, h3, h4, nav, .site-footer {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
 }
 
 h1 { font-size: 1.8rem; line-height: 1.25; }
-h2 { font-size: 1.4rem; margin-bottom: 0.6rem; color: #2dd4bf; border-bottom: 2px solid rgba(45, 212, 191, 0.3); padding-bottom: 0.3rem; }
-h3 { font-size: 1.1rem; margin-bottom: 0.4rem; color: #2dd4bf; }
+h2 { font-size: 1.4rem; margin-bottom: 0.6rem; color: var(--accent); border-bottom: 2px solid rgb(var(--accent-rgb) / 0.3); padding-bottom: 0.3rem; }
+h3 { font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--accent); }
 p  { margin-bottom: 0.9rem; }
 
-a      { color: #2dd4bf; text-decoration: underline; }
-a:hover { color: #5eead4; }
+a      { color: var(--accent); text-decoration: underline; }
+a:hover { color: var(--accent-hover); }
 
 /* ---- Layout ---- */
 .wrapper {
@@ -49,8 +49,8 @@ a:hover { color: #5eead4; }
    itself is identical across every page on the site; this is just the
    thesis section's own Overview/Methodology/Results/Downloads tabs. */
 .thesis-subnav {
-  background-color: #111827;
-  border-bottom: 1px solid #30363d;
+  background-color: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
 }
 
 .thesis-subnav .wrapper {
@@ -64,7 +64,7 @@ a:hover { color: #5eead4; }
 
 .thesis-subnav-label {
   font-size: 0.82rem;
-  color: #8b949e;
+  color: var(--text-muted);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -79,7 +79,7 @@ a:hover { color: #5eead4; }
 .thesis-subnav ul li a {
   display: inline-block;
   padding: 0.3rem 0.7rem;
-  color: #e2e2e2;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: bold;
@@ -89,14 +89,14 @@ a:hover { color: #5eead4; }
 
 .thesis-subnav ul li a:hover,
 .thesis-subnav ul li a.active {
-  background-color: rgba(45, 212, 191, 0.12);
-  color: #2dd4bf;
+  background-color: rgb(var(--accent-rgb) / 0.12);
+  color: var(--accent);
 }
 
 .badge-label {
-  background-color: rgba(45, 212, 191, 0.12);
-  color: #2dd4bf;
-  border: 1px solid rgba(45, 212, 191, 0.3);
+  background-color: rgb(var(--accent-rgb) / 0.12);
+  color: var(--accent);
+  border: 1px solid rgb(var(--accent-rgb) / 0.3);
   font-size: 0.7rem;
   font-weight: bold;
   padding: 0.15rem 0.55rem;
@@ -108,22 +108,22 @@ a:hover { color: #5eead4; }
 
 /* ---- Hero / Intro Banner ---- */
 .hero {
-  background-color: #111827;
-  color: #e6edf3;
+  background-color: var(--bg-alt);
+  color: var(--text);
   padding: 2.5rem 0;
   text-align: center;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero h2 {
-  color: #2dd4bf;
+  color: var(--accent);
   border-bottom: none;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .hero p {
-  color: #8b949e;
+  color: var(--text-muted);
   max-width: 700px;
   margin: 0 auto 0;
   font-size: 0.95rem;
@@ -131,8 +131,8 @@ a:hover { color: #5eead4; }
 
 .hero-cta {
   display: inline-block;
-  background-color: #2dd4bf;
-  color: #0d1117;
+  background-color: var(--accent);
+  color: var(--on-accent);
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.55rem 1.3rem;
@@ -143,8 +143,33 @@ a:hover { color: #5eead4; }
 }
 
 .hero-cta:hover {
-  background-color: #5eead4;
+  background-color: var(--accent-hover);
   transform: translateY(-2px);
+}
+
+/* ---- Responsive video embed (16:9) ---- */
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: #000;
+  box-shadow: 0 4px 10px rgb(var(--shadow-rgb) / calc(0.3 * var(--shadow-k)));
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .hero-tags {
@@ -153,13 +178,13 @@ a:hover { color: #5eead4; }
 
 .tag {
   display: inline-block;
-  background-color: rgba(45, 212, 191, 0.1);
-  color: #2dd4bf;
-  border: 1px solid rgba(45, 212, 191, 0.3);
+  background-color: rgb(var(--accent-rgb) / 0.1);
+  color: var(--accent);
+  border: 1px solid rgb(var(--accent-rgb) / 0.3);
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
   margin: 0.15rem;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
   border-radius: 4px;
 }
 
@@ -169,11 +194,11 @@ a:hover { color: #5eead4; }
 }
 
 .section {
-  background-color: #161b22;
+  background-color: var(--surface);
   padding: 1.5rem 1.8rem;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #2dd4bf;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 10px rgb(var(--shadow-rgb) / calc(0.3 * var(--shadow-k)));
   border-radius: 0 6px 6px 0;
 }
 
@@ -190,22 +215,22 @@ a:hover { color: #5eead4; }
 }
 
 .area-grid th {
-  background-color: #2dd4bf;
-  color: #0d1117;
+  background-color: var(--accent);
+  color: var(--on-accent);
   padding: 0.5rem 0.8rem;
   text-align: left;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
 }
 
 .area-grid td {
   padding: 0.45rem 0.8rem;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid var(--border);
   vertical-align: top;
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 .area-grid tr:nth-child(even) td {
-  background-color: #1a2332;
+  background-color: var(--surface-2);
 }
 
 /* ---- Feature List ---- */
@@ -216,14 +241,14 @@ a:hover { color: #5eead4; }
 
 .feature-list li {
   padding: 0.35rem 0 0.35rem 1.4rem;
-  border-bottom: 1px dotted #30363d;
+  border-bottom: 1px dotted var(--border);
   position: relative;
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 .feature-list li::before {
   content: "\25BA";
-  color: #2dd4bf;
+  color: var(--accent);
   position: absolute;
   left: 0;
   top: 0.35rem;
@@ -245,8 +270,8 @@ a:hover { color: #5eead4; }
   counter-increment: step-counter;
   padding: 0.5rem 0 0.5rem 2.5rem;
   position: relative;
-  border-bottom: 1px solid #30363d;
-  color: #e0e0e0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
 }
 
 .pipeline-steps li::before {
@@ -254,9 +279,9 @@ a:hover { color: #5eead4; }
   position: absolute;
   left: 0;
   top: 0.45rem;
-  background-color: #2dd4bf;
-  color: #0d1117;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: var(--accent);
+  color: var(--on-accent);
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 0.8rem;
   width: 1.5rem;
@@ -289,12 +314,12 @@ a:hover { color: #5eead4; }
 }
 
 .screenshot-placeholder {
-  background-color: #1a2332;
-  border: 2px dashed #30363d;
+  background-color: var(--surface-2);
+  border: 2px dashed var(--border);
   text-align: center;
   padding: 3.5rem 1rem;
-  color: #8b949e;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: var(--text-muted);
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
 }
 
@@ -302,7 +327,7 @@ a:hover { color: #5eead4; }
   display: block;
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
-  color: #e0e0e0;
+  color: var(--text);
 }
 
 /* ---- Download Cards ---- */
@@ -314,8 +339,8 @@ a:hover { color: #5eead4; }
 }
 
 .download-grid td {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   padding: 1rem 1.2rem;
   vertical-align: top;
   width: 50%;
@@ -330,26 +355,26 @@ a:hover { color: #5eead4; }
 }
 
 .download-grid .dl-title {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 0.95rem;
-  color: #2dd4bf;
+  color: var(--accent);
   margin-bottom: 0.3rem;
 }
 
 .download-grid .dl-desc {
   font-size: 0.85rem;
-  color: #8b949e;
+  color: var(--text-muted);
   margin-bottom: 0.6rem;
 }
 
 .btn-download {
   display: inline-block;
-  background-color: #2dd4bf;
-  color: #0d1117;
+  background-color: var(--accent);
+  color: var(--on-accent);
   padding: 0.4rem 1rem;
   text-decoration: none;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
   font-weight: bold;
   border-radius: 5px;
@@ -357,8 +382,8 @@ a:hover { color: #5eead4; }
 }
 
 .btn-download:hover {
-  background-color: #5eead4;
-  color: #0d1117;
+  background-color: var(--accent-hover);
+  color: var(--on-accent);
 }
 
 /* ---- Stat Callout ---- */
@@ -373,8 +398,8 @@ a:hover { color: #5eead4; }
   display: table-cell;
   width: 50%;
   vertical-align: top;
-  background-color: #1a2332;
-  border: 1px solid #30363d;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1.1rem 1.2rem;
   text-align: center;
@@ -383,17 +408,17 @@ a:hover { color: #5eead4; }
 .stat .stat-value {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #2dd4bf;
+  color: var(--accent);
   line-height: 1.1;
 }
 
 .stat.stat-negative .stat-value {
-  color: #fbbf24;
+  color: var(--amber);
 }
 
 .stat .stat-label {
   font-size: 0.85rem;
-  color: #8b949e;
+  color: var(--text-muted);
   margin-top: 0.3rem;
 }
 
@@ -410,12 +435,12 @@ a:hover { color: #5eead4; }
 
 /* ---- Info Box ---- */
 .info-box {
-  background-color: rgba(45, 212, 191, 0.06);
-  border-left: 4px solid #2dd4bf;
+  background-color: rgb(var(--accent-rgb) / 0.06);
+  border-left: 4px solid var(--accent);
   padding: 0.8rem 1rem;
   margin: 0.8rem 0;
   font-size: 0.9rem;
-  color: #8b949e;
+  color: var(--text-muted);
 }
 
 /* ---- Two-Column ---- */
@@ -442,30 +467,30 @@ dl.meta {
 }
 
 dl.meta dt {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color: #2dd4bf;
+  color: var(--accent);
   margin-top: 0.5rem;
 }
 
 dl.meta dd {
   margin-left: 0;
-  color: #8b949e;
+  color: var(--text-muted);
 }
 
 /* ---- Site Footer ---- */
 .site-footer {
-  background-color: #0d1117;
-  color: #8b949e;
+  background-color: var(--bg);
+  color: var(--text-muted);
   text-align: center;
   padding: 1.2rem 0;
   font-size: 0.82rem;
   margin-top: 2rem;
-  border-top: 1px solid #30363d;
+  border-top: 1px solid var(--border);
 }
 
 .site-footer a {
-  color: #2dd4bf;
+  color: var(--accent);
 }
 
 .site-footer p {
@@ -512,5 +537,12 @@ dl.meta dd {
 
   .thesis-subnav-label {
     display: none;
+  }
+
+  /* Wide data tables scroll inside themselves instead of the whole page */
+  .area-grid {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

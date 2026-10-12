@@ -13,9 +13,9 @@ section {
     display: flex;
     align-items: center;
     padding: 100px 20px;
-    background-color: #0d1117;
-    color: #e6edf3;
-    min-height: calc(100vh - 60px);
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: calc(100vh - 56px);
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -42,9 +42,9 @@ section {
 #globe-canvas .scene-tooltip {
     z-index: 10;
     pointer-events: none;
-    background-color: rgba(13, 17, 23, 0.92) !important;
-    color: #2dd4bf !important;
-    border: 1px solid rgba(45, 212, 191, 0.4);
+    background-color: rgb(var(--bg-rgb) / 0.92) !important;
+    color: var(--accent) !important;
+    border: 1px solid rgb(var(--accent-rgb) / 0.4);
     padding: 4px 10px;
     border-radius: 5px;
     font-size: 0.85em;
@@ -69,7 +69,7 @@ section {
 .about-summary h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #2dd4bf;
+    color: var(--accent);
 }
 
 .about-summary p {
@@ -80,8 +80,8 @@ section {
 .cta-button {
     display: inline-block;
     padding: 10px 22px;
-    background-color: #2dd4bf;
-    color: #0d1117;
+    background-color: var(--accent);
+    color: var(--on-accent);
     text-decoration: none;
     border-radius: 5px;
     margin-right: 10px;
@@ -91,7 +91,7 @@ section {
 }
 
 .cta-button:hover {
-    background-color: #5eead4;
+    background-color: var(--accent-hover);
     transform: translateY(-2px);
 }
 
@@ -128,5 +128,42 @@ section {
         text-align: center;
         margin-right: 0;
         margin-top: 10px;
+    }
+}
+
+/* =====================
+   Featured Projects
+   ===================== */
+#featured {
+    border-top: 1px solid var(--border);
+}
+
+.featured-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px 70px;
+}
+
+.featured-inner h2 {
+    font-size: 1.6em;
+    color: var(--accent);
+    margin: 0 0 24px;
+}
+
+.featured-more {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.featured-more:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .featured-inner {
+        padding: 40px 16px 50px;
     }
 }

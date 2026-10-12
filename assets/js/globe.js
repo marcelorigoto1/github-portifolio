@@ -1,15 +1,30 @@
 // 3D globe background for the About Me hero, built on globe.gl (three.js).
 // Auto-rotates, lets visitors drag to look around, and highlights whichever
 // country is under the cursor. Shows the Rio -> Salzburg -> Olomouc route.
+// Colours and the Earth texture follow the site's light/dark theme.
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("globe-canvas");
     if (!container || typeof Globe === "undefined") return;
 
-    const ACCENT = "#2dd4bf"; // matches --accent teal
-    const ACCENT_DIM = "rgba(45, 212, 191, 0.25)";
-    const ROUTE_COLOR = "#fbbf24"; // amber, stands out against the teal grid
+    const IMG = "https://cdn.jsdelivr.net/npm/three-globe@2.45.3/example/img/";
+    const PALETTES = {
+        dark: {
+            texture: IMG + "earth-dark.jpg",
+            accent: "#2dd4bf", // matches --accent
+            accentDim: "rgba(45, 212, 191, 0.25)",
+            route: "#fbbf24", // amber, stands out against the teal grid
+        },
+        light: {
+            texture: IMG + "earth-blue-marble.jpg",
+            accent: "#0f766e",
+            accentDim: "rgba(255, 255, 255, 0.45)",
+            route: "#f59e0b",
+        },
+    };
+    let palette = PALETTES[document.documentElement.getAttribute("data-theme")] || PALETTES.dark;
+    let hovered = null;
 
-    const COUNTRIES_URL = "https://cdn.jsdelivr.net/gh/vasturiano/globe.gl/example/datasets/ne_110m_admin_0_countries.geojson";
+    const COUNTRIES_URL = "https://cdn.jsdelivr.net/gh/vasturiano/globe.gl@v2.46.1/example/datasets/ne_110m_admin_0_countries.geojson";
 
     const ROUTE_STOPS = [
         { name: "Rio de Janeiro", lat: -22.9068, lng: -43.1729 },
@@ -29,24 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const world = new Globe(container)
         .backgroundColor("rgba(0,0,0,0)")
-        .globeImageUrl("https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-dark.jpg")
         .showAtmosphere(true)
-        .atmosphereColor(ACCENT)
         .atmosphereAltitude(0.18)
         .polygonsData([])
-        .polygonAltitude(0.003)
-        .polygonCapColor(() => "rgba(0, 0, 0, 0)")
         .polygonSideColor(() => "rgba(0, 0, 0, 0)")
-        .polygonStrokeColor(() => ACCENT_DIM)
         .polygonLabel((d) => (d.properties && d.properties.ADMIN) || "")
         .onPolygonHover((hoverD) => {
-            world
-                .polygonAltitude((d) => (d === hoverD ? 0.02 : 0.003))
-                .polygonCapColor((d) => (d === hoverD ? ACCENT_DIM : "rgba(0, 0, 0, 0)"))
-                .polygonStrokeColor((d) => (d === hoverD ? ACCENT : ACCENT_DIM));
+            hovered = hoverD;
+            paintPolygons();
         })
         .arcsData(routeArcs)
-        .arcColor(() => ROUTE_COLOR)
         .arcAltitude(0.28)
         .arcStroke(0.4)
         .arcDashLength(0.4)
@@ -54,9 +61,31 @@ document.addEventListener("DOMContentLoaded", () => {
         .arcDashAnimateTime(4000)
         .pointsData(ROUTE_STOPS)
         .pointLabel("name")
-        .pointColor(() => ROUTE_COLOR)
         .pointRadius(0.35)
         .pointAltitude(0.012);
+
+    function paintPolygons() {
+        world
+            .polygonAltitude((d) => (d === hovered ? 0.02 : 0.003))
+            .polygonCapColor((d) => (d === hovered ? palette.accentDim : "rgba(0, 0, 0, 0)"))
+            .polygonStrokeColor((d) => (d === hovered ? palette.accent : palette.accentDim));
+    }
+
+    function applyPalette() {
+        world
+            .globeImageUrl(palette.texture)
+            .atmosphereColor(palette.accent)
+            .arcColor(() => palette.route)
+            .pointColor(() => palette.route);
+        paintPolygons();
+    }
+
+    applyPalette();
+
+    document.addEventListener("themechange", (e) => {
+        palette = PALETTES[e.detail] || PALETTES.dark;
+        applyPalette();
+    });
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

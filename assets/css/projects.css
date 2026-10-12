@@ -9,33 +9,33 @@
     justify-content: center;
     padding: 20px 20px 0;
     position: sticky;
-    top: 53px; /* below navbar */
+    top: 56px; /* below navbar (min-height in base.css) */
     z-index: 100;
-    background: linear-gradient(to bottom, #0d1117 80%, transparent);
+    background: linear-gradient(to bottom, var(--bg) 80%, transparent);
     padding-bottom: 16px;
 }
 
 .filter-btn {
     background: transparent;
-    border: 1px solid #30363d;
-    color: #8b949e;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
     padding: 7px 18px;
     border-radius: 20px;
     font-size: 0.88em;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Inter', 'Inter Fallback', Arial, sans-serif;
     cursor: pointer;
     transition: border-color 0.25s, color 0.25s, background-color 0.25s;
 }
 
 .filter-btn:hover {
-    border-color: #2dd4bf;
-    color: #2dd4bf;
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 .filter-btn.active {
-    background-color: rgba(45, 212, 191, 0.12);
-    border-color: #2dd4bf;
-    color: #2dd4bf;
+    background-color: rgb(var(--accent-rgb) / 0.12);
+    border-color: var(--accent);
+    color: var(--accent);
     font-weight: bold;
 }
 
@@ -43,19 +43,19 @@
 .projects-hero {
     text-align: center;
     padding: 60px 20px 40px;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid var(--border);
 }
 
 .projects-hero h1 {
     font-size: 2.8em;
-    color: #2dd4bf;
+    color: var(--accent);
     margin-bottom: 12px;
     font-weight: bold;
 }
 
 .projects-hero p {
     font-size: 1.05em;
-    color: #8b949e;
+    color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -73,9 +73,9 @@
 
 .project-category h2 {
     font-size: 1.5em;
-    color: #e6edf3;
+    color: var(--text);
     margin-bottom: 24px;
-    border-bottom: 2px solid #2dd4bf;
+    border-bottom: 2px solid var(--accent);
     padding-bottom: 10px;
     display: flex;
     align-items: center;
@@ -95,21 +95,21 @@
 
 /* Card */
 .project-card {
-    background-color: #161b22;
+    background-color: var(--surface);
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 8px rgb(var(--shadow-rgb) / calc(0.4 * var(--shadow-k)));
     overflow: hidden;
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    border: 1px solid #30363d;
+    border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(45, 212, 191, 0.18);
-    border-color: #2dd4bf;
+    box-shadow: 0 10px 30px rgb(var(--accent-rgb) / 0.18);
+    border-color: var(--accent);
 }
 
 /* Image + overlay */
@@ -133,7 +133,7 @@
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(13, 17, 23, 0.65);
+    background: rgb(var(--bg-rgb) / 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,11 +146,11 @@
 }
 
 .card-overlay span {
-    color: #2dd4bf;
+    color: var(--accent);
     font-size: 1.1em;
     font-weight: bold;
     letter-spacing: 0.06em;
-    border: 2px solid #2dd4bf;
+    border: 2px solid var(--accent);
     padding: 8px 20px;
     border-radius: 6px;
 }
@@ -162,13 +162,13 @@
 
 .project-content h3 {
     font-size: 1.05em;
-    color: #e6edf3;
+    color: var(--text);
     margin-bottom: 8px;
 }
 
 .project-content p {
     font-size: 0.88em;
-    color: #8b949e;
+    color: var(--text-muted);
     line-height: 1.55;
     margin: 0;
 }
