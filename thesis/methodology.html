@@ -17,8 +17,8 @@
   <script id="theme-init">(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)})();</script>
   <title>Methodology — Data-Driven Wildfire Spread Modeling</title>
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../assets/css/base.css?v=20261012b">
+  <link rel="stylesheet" href="css/style.css?v=20261012b" />
 </head>
 <body>
 
@@ -37,7 +37,6 @@
         <a href="../index.html">Home</a>
         <a href="../all-projects.html">Projects</a>
         <a href="../about-me.html">About Me</a>
-        <a href="../internship.html">Internship</a>
         <a href="../thesis/index.html" class="active" aria-current="page">Thesis</a>
     </div>
     <div class="nav-actions">
@@ -169,10 +168,10 @@
       <div class="gallery">
         <div class="gallery-row">
           <div class="gallery-cell">
-            <img src="img/launch-menu.jpg" alt="Desktop build launch configuration menu for selecting fire, weather, and terrain inputs" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <img src="img/launch-menu.jpg" alt="Desktop build launch configuration menu for selecting fire, weather, and terrain inputs" style="width:100%; border-radius:6px; border:1px solid var(--border);">
           </div>
           <div class="gallery-cell">
-            <img src="img/minimap-compass.jpg" alt="In-scene minimap and compass helping the user locate the fire relative to their camera" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <img src="img/minimap-compass.jpg" alt="In-scene minimap and compass helping the user locate the fire relative to their camera" style="width:100%; border-radius:6px; border:1px solid var(--border);">
           </div>
         </div>
       </div>
@@ -202,10 +201,10 @@
       <div class="gallery">
         <div class="gallery-row">
           <div class="gallery-cell">
-            <img src="img/timeline-control.jpg" alt="Timeline control showing the current date and playback buttons" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <img src="img/timeline-control.jpg" alt="Timeline control showing the current date and playback buttons" style="width:100%; border-radius:6px; border:1px solid var(--border);">
           </div>
           <div class="gallery-cell">
-            <img src="img/burn-scars.jpg" alt="Accumulated smoke and burn scars over the Jasper terrain" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <img src="img/burn-scars.jpg" alt="Accumulated smoke and burn scars over the Jasper terrain" style="width:100%; border-radius:6px; border:1px solid var(--border);">
           </div>
         </div>
       </div>
@@ -275,7 +274,7 @@
   </div>
 </footer>
 
-<script src="../assets/js/script.js"></script>
+<script src="../assets/js/script.js?v=20261012b"></script>
 <script>
   document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
   const observer = new IntersectionObserver(entries => {

@@ -7,7 +7,7 @@ Structure:
 - index.html          Home (globe.gl hero + featured projects)
 - about-me.html       Profile, tools & skills, academic and professional timeline
 - all-projects.html   Project gallery with category filter
-- internship.html     Geotrilho topography & survey internship
+- internship.html     Geotrilho internship report (linked from About Me, not in the navbar)
 - bip.html, issonvis.html   Programme / summer school reports
 - thesis/             Master thesis mini-site (overview, methodology, results, downloads)
 - assets/css/base.css Shared navbar, footer and body styles (loaded on every page)
@@ -16,6 +16,10 @@ Structure:
 Adding a page: copy the navbar/footer and <head> meta tags (including the
 <script id="theme-init"> line) from an existing page and mark the current link
 with class="active" aria-current="page".
+
+Cache-busting: every local CSS/JS link ends in ?v=20261012b. When you change
+any CSS or JS file, bump that value in all pages (search & replace), otherwise
+visitors may keep a stale cached copy and see a half-updated site.
 
 Light/dark theme: colours are CSS variables defined at the top of base.css.
 Use var(--accent), var(--text), var(--surface)... instead of hex colours so new

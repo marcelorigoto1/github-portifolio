@@ -17,8 +17,8 @@
   <script id="theme-init">(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)})();</script>
   <title>Results — Data-Driven Wildfire Spread Modeling</title>
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../assets/css/base.css?v=20261012b">
+  <link rel="stylesheet" href="css/style.css?v=20261012b" />
 </head>
 <body>
 
@@ -37,7 +37,6 @@
         <a href="../index.html">Home</a>
         <a href="../all-projects.html">Projects</a>
         <a href="../about-me.html">About Me</a>
-        <a href="../internship.html">Internship</a>
         <a href="../thesis/index.html" class="active" aria-current="page">Thesis</a>
     </div>
     <div class="nav-actions">
@@ -70,11 +69,11 @@
       <div class="gallery">
         <div class="gallery-row">
           <div class="gallery-cell">
-            <img src="img/desktop-build-jasper.jpg" alt="Desktop build showing the 2024 Jasper wildfire on 23 July, with wind arrows, burn scars, timeline, and minimap" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <img src="img/desktop-build-jasper.jpg" alt="Desktop build showing the 2024 Jasper wildfire on 23 July, with wind arrows, burn scars, timeline, and minimap" style="width:100%; border-radius:6px; border:1px solid var(--border);">
             <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.4rem;">Desktop reference build &mdash; full feature set, including accumulated burn scars and the minimap/compass.</p>
           </div>
           <div class="gallery-cell">
-            <img src="img/browser-build-jasper.jpg" alt="Browser (WebGL) build showing the same Jasper wildfire scene, used in the comparative study" style="width:100%; border-radius:6px; border:1px solid #30363d;">
+            <img src="img/browser-build-jasper.jpg" alt="Browser (WebGL) build showing the same Jasper wildfire scene, used in the comparative study" style="width:100%; border-radius:6px; border:1px solid var(--border);">
             <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.4rem;">Browser (WebGL) build &mdash; the reduced-feature build participants actually evaluated, reachable via a single link.</p>
           </div>
         </div>
@@ -314,7 +313,7 @@
   </div>
 </footer>
 
-<script src="../assets/js/script.js"></script>
+<script src="../assets/js/script.js?v=20261012b"></script>
 <script>
   document.querySelectorAll('.section, .hero').forEach(el => el.classList.add('fade-in'));
   const observer = new IntersectionObserver(entries => {
